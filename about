@@ -3,152 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>About – EEOC Explained</title>
-  <meta name="description" content="EEOC Explained — plain-English guides to workplace rights, discrimination law, and the EEOC process.">
-  <meta name="keywords" content="EEOC, workplace rights, discrimination, retaliation, Title VII, ADA, ADEA, filing a charge, Equal Employment Opportunity Commission">
-  <meta name="author" content="EEOC Explained">
-
-  <!-- Social sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="About – EEOC Explained">
-  <meta property="og:description" content="Plain-English guides to the EEOC process, from filing a charge to mediation and next steps.">
-  <meta property="og:image" content="https://eeocexplained.github.io/Clipped_image_20251006_1012.png">
-  <meta property="og:url" content="https://eeocexplained.github.io/about.html">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Favicon / logo (you added this at the repo root) -->
-  <link rel="icon" href="Clipped_image_20251006_1012.png" type="image/png">
-
-  <!-- Minimal, embedded styles for consistency and speed -->
-  <style>
-    :root{
-      --brand:#0a66c2;
-      --text:#222;
-      --muted:#6b7280;
-      --bg:#f4f6f8;
-      --card:#ffffff;
-      --border:#e5e7eb;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.55;
-    }
-
-    /* Header */
-    .site-header{
-      background:var(--brand);
-      color:#fff;
-      padding:20px 16px;
-    }
-    .header-inner{
-      max-width:980px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .logo{
-      width:40px;height:40px;flex:0 0 40px;border-radius:50%;
-      background:#fff1;display:grid;place-items:center;overflow:hidden
-    }
-    .logo img{width:100%;height:100%;object-fit:cover}
-    .site-title{
-      margin:0;
-      font-size:1.6rem;
-      font-weight:800;
-      letter-spacing:.3px;
-    }
-    .site-sub{margin:.25rem 0 0;font-size:.95rem;opacity:.95}
-
-    /* Nav */
-    .nav{
-      background:#0a5ab0;
-    }
-    .nav ul{
-      list-style:none;margin:0; padding:0;
-      max-width:980px; margin-inline:auto;
-      display:flex; gap:4px; overflow:auto; scrollbar-width:none;
-    }
-    .nav a{
-      display:block; padding:10px 14px;
-      color:#eaf3ff; text-decoration:none; font-weight:600;
-      border-radius:8px;
-    }
-    .nav a[aria-current="page"], .nav a:hover{background:#0a4f9c;color:#fff}
-
-    /* Layout */
-    .container{max-width:980px; margin:22px auto; padding:0 16px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:18px 18px;
-      box-shadow:0 1px 2px rgba(0,0,0,.04);
-      margin-bottom:16px;
-    }
-    h1,h2{line-height:1.2}
-    h1{font-size:1.9rem;margin:0 0 .4rem}
-    h2{font-size:1.25rem;margin:1rem 0 .25rem}
-    .lead{color:var(--muted)}
-    ul{margin:.5rem 0 .25rem 1.2rem}
-    li{margin:.35rem 0}
-
-    /* Footer */
-    .site-footer{
-      background:#1f2937; color:#e5e7eb;
-      margin-top:28px;
-    }
-    .footer-inner{
-      max-width:980px;margin:0 auto;padding:16px;
-      font-size:.92rem; display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
-      justify-content:space-between;
-    }
-    .small{font-size:.9rem;color:#cbd5e1}
-    .links{display:flex; gap:14px}
-    .links a{color:#e5e7eb;text-decoration:none}
-    .links a:hover{text-decoration:underline}
-
-    /* Accessibility helpers */
-    a:focus-visible, button:focus-visible{outline:3px solid #94c6ff; outline-offset:2px; border-radius:8px}
-  </style>
+  <title>About — EEOC Explained</title>
+  <meta name="description" content="Our mission is to make the EEOC process understandable so you can make informed decisions at every step.">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <div class="logo" aria-hidden="true">
-        <img src="Clipped_image_20251006_1012.png" alt="EEOC Explained logo">
-      </div>
+  <header class="site-header">
+    <div class="brand">
+      <img src="Clipped_image_20251006_101225.png" alt="EEOC Explained logo" width="56" height="56" />
       <div>
         <h1 class="site-title">EEOC Explained</h1>
-        <p class="site-sub">Simplifying workplace rights, discrimination law, and the EEOC process.</p>
+        <p class="site-sub">Plain-English guidance for workers and employers</p>
       </div>
     </div>
+    <nav class="navbar" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <!-- Primary nav -->
-  <nav class="nav" aria-label="Primary">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="checklist" >Checklist</a></li>
-      <li><a href="resources">Resources</a></li>
-      <li><a href="contact">Contact</a></li>
-      <li><a href="about.html" aria-current="page">About</a></li>
-    </ul>
-  </nav>
-
-  <!-- Main content -->
-  <main id="main" class="container">
+  <main class="container">
     <section class="card">
-      <h1>About EEOC Explained</h1>
+      <h2>Our Mission</h2>
       <p class="lead">
-        We make the EEOC process understandable—so you can make informed decisions at every step.
+        We make the EEOC process understandable — so you can make informed decisions at every step.
       </p>
       <p>
-        From filing a charge to mediation, investigations, and the Notice of Right to Sue, we translate complex rules into
+        From filing a charge to mediation, investigation, and the Notice of Right to Sue, we translate complex rules into practical
+        checklists, timelines, and examples.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What You'll Find Here</h2>
+      <ul class="list">
+        <li>Step-by-step checklists and timelines</li>
+        <li>Templates and plain-language explanations</li>
+        <li>Short video walk-throughs (coming soon)</li>
+        <li>Answers to common questions about EEOC rights and procedures</li>
+      </ul>
+      <p class="muted"><strong>Disclaimer:</strong> Content is educational only and not legal advice.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="y"></span> EEOC Explained — All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
