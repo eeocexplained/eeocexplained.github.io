@@ -120,3 +120,12 @@
   </script>
 </body>
 </html>
+
+/* Responsive logo */
+img[alt="EEOC Explained Logo"] {
+  max-width: 160px;
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
