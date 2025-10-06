@@ -38,7 +38,7 @@
       <p class="lead">Questions or suggestions? Send a message below. For legal advice about your situation, consider speaking with an attorney.</p>
 
       <!-- Simple mailto form (no server needed) -->
-      <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <form action="mailto:eeocexplained@gmail.com" method="post" enctype="text/plain">
         <div class="field">
           <label for="name">Your name</label>
           <input id="name" name="Name" type="text" required />
@@ -56,7 +56,7 @@
 
         <div class="cta-row">
           <button class="btn" type="submit">Send</button>
-          <a class="btn btn-ghost" href="mailto:your-email@example.com?subject=EEOC%20Explained%20Inquiry">Open email app</a>
+          <a class="btn btn-ghost" href="mailto:eeocexplained@gmail.com?subject=EEOC%20Explained%20Inquiry">Open email app</a>
         </div>
       </form>
     </section>
