@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EEOC Explained — Workplace Rights Simplified</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>EEOC Explained — Workplace Rights, Discrimination Law & the EEOC Process</title>
+  <meta name="description" content="Plain-English guides to workplace rights and the EEOC process — from filing a charge to mediation, investigation, and final decisions.">
+
+  <!-- Open Graph (nice link previews) -->
+  <meta property="og:title" content="EEOC Explained" />
+  <meta property="og:description" content="Plain-English guides to workplace rights and the EEOC process." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eeocexplained.github.io/" />
+  <meta property="og:image" content="Clipped_image_20251006_101225.png" />
+
+  <link rel="canonical" href="https://eeocexplained.github.io/" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
-    <h1 class="site-title">EEOC Explained</h1>
-    <p class="site-sub">Simplifying workplace rights, discrimination law, and the EEOC process</p>
-  </header>
+    <div class="brand">
+      <!-- If you later move the logo to /assets/logo.png, just change the src below -->
+      <img src="Clipped_image_20251006_101225.png" alt="EEOC Explained logo" width="72" height="72" decoding="async" />
+      <div>
+        <h1 class="site-title">EEOC Explained</h1>
+        <p class="site-sub">Simplifying workplace rights, discrimination law, and the EEOC process</p>
+      </div>
+    </div>
 
-  <nav class="navbar">
-    <a class="active" href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <nav class="navbar" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main class="container">
     <section class="card">
@@ -24,88 +43,47 @@
       <p class="lead">
         This site helps you understand your workplace rights, how to file or respond to an EEOC charge, and what to expect during the investigation process — all in plain, accessible language.
       </p>
-      <p><strong>Coming soon:</strong> video guides, templates, and case insights to help you navigate every step.</p>
+      <p><strong>Coming soon:</strong> short videos, templates, and case insights to help at every step.</p>
+      <div class="cta-row">
+        <a class="btn" href="checklist.html">Open the EEOC Checklist</a>
+        <a class="btn btn-ghost" href="resources.html">Browse Resources</a>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>EEOC Complaint Checklist</h2>
-      <p class="lead">Use this quick checklist to track your progress. Your selections are saved in your browser.</p>
+    <section class="grid">
+      <article class="card">
+        <h3>File an EEOC Charge</h3>
+        <p>When, where, and how to file — deadlines, forms, and practical tips.</p>
+        <a class="link" href="resources.html#file">Learn more →</a>
+      </article>
 
-      <ul class="checklist">
-        <li>
-          <input id="c1" type="checkbox">
-          <div>
-            <label for="c1">File an EEOC Charge</label>
-            <small>Submit your charge online, by mail, or in person at your nearest EEOC office.</small>
-          </div>
-        </li>
-        <li>
-          <input id="c2" type="checkbox">
-          <div>
-            <label for="c2">Provide Supporting Evidence</label>
-            <small>Include emails, notes, witness names, or documents to strengthen your claim.</small>
-          </div>
-        </li>
-        <li>
-          <input id="c3" type="checkbox">
-          <div>
-            <label for="c3">Respond to Information Requests</label>
-            <small>Watch for EEOC communications and reply promptly to stay on track.</small>
-          </div>
-        </li>
-        <li>
-          <input id="c4" type="checkbox">
-          <div>
-            <label for="c4">Participate in Mediation</label>
-            <small>If offered, mediation can resolve your case faster without a full investigation.</small>
-          </div>
-        </li>
-        <li>
-          <input id="c5" type="checkbox">
-          <div>
-            <label for="c5">Investigation</label>
-            <small>The EEOC may collect documents, conduct interviews, or visit the workplace.</small>
-          </div>
-        </li>
-        <li>
-          <input id="c6" type="checkbox">
-          <div>
-            <label for="c6">Final Determination</label>
-            <small>You’ll receive results or a Notice of Right to Sue, allowing you to pursue your claim in court.</small>
-          </div>
-        </li>
-      </ul>
+      <article class="card">
+        <h3>Mediation & Investigation</h3>
+        <p>What to expect, how to prepare, and how each step affects your case.</p>
+        <a class="link" href="resources.html#investigation">Learn more →</a>
+      </article>
+
+      <article class="card">
+        <h3>Final Determination</h3>
+        <p>Results, Notice of Right to Sue, and options if you disagree.</p>
+        <a class="link" href="resources.html#final">Learn more →</a>
+      </article>
     </section>
   </main>
 
   <footer class="site-footer">
-    © 2025 EEOC Explained — All rights reserved.
+    <p>© <span id="y"></span> EEOC Explained — All rights reserved.</p>
   </footer>
 
   <script>
-    // Persist checklist in localStorage
-    const boxes = document.querySelectorAll('.checklist input[type="checkbox"]');
-    boxes.forEach((box, idx) => {
-      const key = `eeoc_check_${idx}`;
-      const saved = localStorage.getItem(key);
-      if (saved !== null) box.checked = saved === '1';
-      box.addEventListener('change', () => {
-        localStorage.setItem(key, box.checked ? '1' : '0');
-      });
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mark current nav link active based on filename
+    const here = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.navbar a').forEach(a => {
+      if (a.getAttribute('href') === here) a.classList.add('active');
     });
   </script>
 </body>
-
-<!-- EEOC Explained Logo -->
-<div style="text-align:center; margin-top: 20px;">
-  <img src="Clipped_image_20251006_1012.png" alt="EEOC Explained Logo" style="width:160px; height:auto; border-radius:50%;">
-</div>
-
-<nav style="text-align:center; margin: 10px 0;">
-  <a href="index.html">Home</a> |
-  <a href="about">About</a> |
-  <a href="checklist">Checklist</a> |
-  <a href="resources">Resources</a> |
-  <a href="contact">Contact</a>
-</nav>
-<hr>
+</html>
