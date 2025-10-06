@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — EEOC Explained</title>
-  <meta name="description" content="Our mission is to make the EEOC process understandable so you can make informed decisions at every step.">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Why this site exists and how we make the EEOC process easier to understand." />
+  <link rel="canonical" href="https://eeocexplained.github.io/about" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="Clipped_image_20251006_101225.png" alt="EEOC Explained logo" width="56" height="56" />
-      <div>
-        <h1 class="site-title">EEOC Explained</h1>
-        <p class="site-sub">Plain-English guidance for workers and employers</p>
-      </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img src="logo.png" alt="EEOC Explained logo" class="site-logo" />
+        <span class="brand-text">
+          <span class="brand-title">EEOC Explained</span>
+          <span class="brand-subtitle">Workplace rights in plain English</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+        <ul id="nav-menu" class="nav-list">
+          <li><a href="./">Home</a></li>
+          <li><a href="checklist">Checklist</a></li>
+          <li><a href="resources">Resources</a></li>
+          <li><a aria-current="page" href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="navbar" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="checklist.html">Checklist</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html">Contact</a>
-    </nav>
   </header>
 
-  <main class="container">
+  <main id="main" class="container" role="main">
     <section class="card">
-      <h2>Our Mission</h2>
-      <p class="lead">
-        We make the EEOC process understandable — so you can make informed decisions at every step.
-      </p>
-      <p>
-        From filing a charge to mediation, investigation, and the Notice of Right to Sue, we translate complex rules into practical
-        checklists, timelines, and examples.
-      </p>
+      <h1>About EEOC Explained</h1>
+      <p class="lead">We translate complex rules and procedures into practical steps you can actually use.</p>
+      <p>EEOC Explained is a public-interest project focused on clarity and access. We are not the EEOC and we don’t provide legal advice. Instead, we offer accurate, plain-language guides so workers and employers can understand the process and make informed decisions.</p>
     </section>
 
     <section class="card">
-      <h2>What You'll Find Here</h2>
-      <ul class="list">
-        <li>Step-by-step checklists and timelines</li>
-        <li>Templates and plain-language explanations</li>
-        <li>Short video walk-throughs (coming soon)</li>
-        <li>Answers to common questions about EEOC rights and procedures</li>
+      <h2>What you’ll find here</h2>
+      <ul>
+        <li>Step-by-step <a href="checklist">checklists</a> that track your progress</li>
+        <li>Plain-English explanations of filings, deadlines, and next steps</li>
+        <li><a href="resources">Resources</a> for forms, reading, and preparation</li>
       </ul>
-      <p class="muted"><strong>Disclaimer:</strong> Content is educational only and not legal advice.</p>
+      <p class="lead"><strong>Disclaimer:</strong> This site is for education only and isn’t legal advice.</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="y"></span> EEOC Explained — All rights reserved.</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
+      const btn=e.currentTarget, m=document.getElementById('nav-menu');
+      const open=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded',!open); m.classList.toggle('open');
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
