@@ -1,0 +1,12 @@
+# EEOC Explained - Robots.txt
+# This file tells search engines what to index and where your sitemap is located.
+
+User-agent: *
+Allow: /
+
+# Disallow internal or placeholder pages if you ever create drafts
+Disallow: /drafts/
+Disallow: /test/
+Disallow: /private/
+
+Sitemap: https://eeocexplained.github.io/sitemap.xml
