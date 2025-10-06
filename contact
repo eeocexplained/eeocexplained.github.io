@@ -1,60 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — EEOC Explained</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Contact EEOC Explained or find help if you need legal advice.">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .field{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+    .field input,.field textarea{
+      border:1px solid var(--border); border-radius:12px; padding:10px;
+      background:#fff; font:inherit;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <h1 class="site-title">EEOC Explained</h1>
-    <p class="site-sub">Questions or suggestions? We’d love to hear from you.</p>
+    <div class="brand">
+      <img src="Clipped_image_20251006_101225.png" alt="EEOC Explained logo" width="56" height="56" />
+      <div>
+        <h1 class="site-title">EEOC Explained</h1>
+        <p class="site-sub">Plain-English guidance for workers and employers</p>
+      </div>
+    </div>
+    <nav class="navbar" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
   </header>
-
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a class="active" href="contact.html">Contact</a>
-  </nav>
 
   <main class="container">
     <section class="card">
-      <h2>Send a Message</h2>
-      <p class="lead">This simple form opens your email app with a pre-filled message.</p>
+      <h2>Contact</h2>
+      <p class="lead">Questions or suggestions? Send a message below. For legal advice about your situation, consider speaking with an attorney.</p>
 
-      <!-- Mailto fallback (no server needed). Replace with your preferred email. -->
-      <form onsubmit="sendMailto(event)">
-        <div style="display:grid;gap:10px;max-width:560px">
-          <input id="name" required placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid #d8dde5">
-          <input id="email" required type="email" placeholder="Your email" style="padding:12px;border-radius:10px;border:1px solid #d8dde5">
-          <textarea id="message" required rows="6" placeholder="How can we help?" style="padding:12px;border-radius:10px;border:1px solid #d8dde5"></textarea>
-          <button style="padding:12px 16px;border:none;border-radius:10px;background:var(--accent);color:white;font-weight:700;width:fit-content">
-            Send Email
-          </button>
+      <!-- Simple mailto form (no server needed) -->
+      <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="Name" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="Email" type="email" required />
+        </div>
+
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="Message" rows="6" required></textarea>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn" type="submit">Send</button>
+          <a class="btn btn-ghost" href="mailto:your-email@example.com?subject=EEOC%20Explained%20Inquiry">Open email app</a>
         </div>
       </form>
-
-      <script>
-        function sendMailto(e){
-          e.preventDefault();
-          const name = encodeURIComponent(document.getElementById('name').value);
-          const email = encodeURIComponent(document.getElementById('email').value);
-          const msg = encodeURIComponent(document.getElementById('message').value);
-          const to = 'eeocexplained@gmail.com'; // ← change if needed
-          const subject = encodeURIComponent('Message from EEOC Explained site');
-          const body = `Name: ${name}%0AEmail: ${email}%0A%0A${msg}`;
-          location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-        }
-      </script>
     </section>
 
-    <section class="card">
-      <h2>Follow Along</h2>
-      <p>Videos, guides, and resources will also be linked from our YouTube channel: <strong>@EEOCExplained</strong>.</p>
+    <section class="grid">
+      <article class="card">
+        <h3>Need Legal Advice?</h3>
+        <p class="muted">This site is educational only. If you need advice, consider contacting a licensed attorney in your state.</p>
+      </article>
+      <article class="card">
+        <h3>Data & Privacy</h3>
+        <p class="muted">Form contents are sent by your email app. We don’t store messages on this website.</p>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">© 2025 EEOC Explained — All rights reserved.</footer>
+  <footer class="site-footer">
+    <p>© <span id="y"></span> EEOC Explained — All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
