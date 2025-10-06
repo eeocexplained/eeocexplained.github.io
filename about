@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — EEOC Explained</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">EEOC Explained</h1>
+    <p class="site-sub">Plain-English guidance for workers and employers</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a class="active" href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>Our Mission</h2>
+      <p class="lead">
+        We make the EEOC process understandable—so you can make informed decisions at every step.
+      </p>
+      <p>
+        From filing a charge to mediation, investigations, and the Notice of Right to Sue, we translate complex rules into practical checklists, timelines, and examples.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What You’ll Find Here</h2>
+      <ul>
+        <li>Step-by-step checklists and timelines</li>
+        <li>Templates and plain-language explanations</li>
+        <li>Short video walkthroughs (coming soon)</li>
+        <li>Answers to common questions about EEOC rights and procedures</li>
+      </ul>
+      <p class="lead"><strong>Disclaimer:</strong> Content is educational only and not legal advice.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2025 EEOC Explained — All rights reserved.</footer>
+</body>
+</html>
