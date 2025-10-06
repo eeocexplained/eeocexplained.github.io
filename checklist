@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEOC Complaint Checklist — EEOC Explained</title>
+  <meta name="description" content="Simple, step-by-step EEOC complaint checklist you can save in your browser.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="Clipped_image_20251006_101225.png" alt="EEOC Explained logo" width="56" height="56" />
+      <div>
+        <h1 class="site-title">EEOC Explained</h1>
+        <p class="site-sub">Plain-English guidance for workers and employers</p>
+      </div>
+    </div>
+    <nav class="navbar" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="checklist.html" class="active">Checklist</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>EEOC Complaint Checklist</h2>
+      <p class="lead">Use this quick checklist to track your progress. Your selections are saved only in your browser.</p>
+
+      <div id="list" class="list"></div>
+
+      <div class="cta-row" style="margin-top:12px">
+        <button class="btn" id="saveBtn" type="button">Save Progress</button>
+        <button class="btn btn-ghost" id="resetBtn" type="button" aria-describedby="reset-note">Reset</button>
+      </div>
+      <p id="reset-note" class="muted" style="margin:.6rem 0 0">Reset clears saved progress on this device only.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Tips</h3>
+        <ul class="list">
+          <li>Write dates right away (deadlines can be short).</li>
+          <li>Keep copies of everything you submit or receive.</li>
+          <li>Reply to EEOC messages promptly.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Heads-up</h3>
+        <p class="muted">This checklist is educational and not legal advice. If you need advice for your situation, consider speaking with an attorney.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p
