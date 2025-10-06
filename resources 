@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — EEOC Explained</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">EEOC Explained</h1>
+    <p class="site-sub">Curated links to official EEOC information and helpful tools</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a class="active" href="resources.html">Resources</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>Official EEOC Links</h2>
+      <ul class="resource-list">
+        <li><a class="btn" href="https://www.eeoc.gov/" target="_blank" rel="noopener">EEOC Homepage</a></li>
+        <li><a class="btn" href="https://www.eeoc.gov/filing-charge-discrimination" target="_blank" rel="noopener">How to File a Charge</a></li>
+        <li><a class="btn" href="https://publicportal.eeoc.gov/portal/" target="_blank" rel="noopener">EEOC Public Portal (File/Check Status)</a></li>
+        <li><a class="btn" href="https://www.eeoc.gov/field-office" target="_blank" rel="noopener">Find an EEOC Field Office</a></li>
+        <li><a class="btn" href="https://www.eeoc.gov/mediation" target="_blank" rel="noopener">Mediation Program</a></li>
+        <li><a class="btn" href="https://www.eeoc.gov/retaliation" target="_blank" rel="noopener">Retaliation — Know Your Rights</a></li>
+        <li><a class="btn" href="https://www.eeoc.gov/laws/types/" target="_blank" rel="noopener">Types of Discrimination</a></li>
+        <li><a class="btn" href="https://www.eeoc.gov/employers/small-business" target="_blank" rel="noopener">Small Business Resource Center</a></li>
+      </ul>
+      <p class="lead" style="margin-top:10px"><strong>Note:</strong> These links go to official .gov pages.</p>
+    </section>
+
+    <section class="card">
+      <h2>Channel & Guides</h2>
+      <p>Our upcoming video explainers and templates will be posted here and on YouTube at <strong>@EEOCExplained</strong>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2025 EEOC Explained — All rights reserved.</footer>
+</body>
+</html>
