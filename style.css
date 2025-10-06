@@ -1,63 +1,134 @@
-/* EEOC Explained – base styles */
+/* ---------- Base / Reset ---------- */
 :root{
-  --brand:#0a66c2;  /* header blue */
-  --ink:#222;
-  --muted:#5b6b7b;
+  --brand:#0a66c2;          /* primary blue */
+  --brand-dark:#084f99;
   --bg:#f4f6f8;
-  --card:#fff;
+  --text:#1f2a37;
+  --muted:#4b5563;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --focus:#ffbf47;          /* accessible focus yellow */
+  --radius:14px;
+  --container:1024px;
+  --shadow:0 6px 20px rgba(16,24,40,.08);
 }
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
   background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-/* Header */
+/* ---------- Utilities ---------- */
+.container{max-width:var(--container);margin-inline:auto;padding:0 16px}
+.lead{color:var(--muted);font-size:1.1rem}
+.grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(12,1fr);
+  margin:28px 0;
+}
+.grid > .card{grid-column:span 12}
+@media(min-width:720px){
+  .grid > .card{grid-column:span 4}
+}
+.btn{
+  display:inline-block;
+  padding:.65rem 1rem;
+  border-radius:999px;
+  background:#fff;
+  color:var(--brand);
+  border:1px solid var(--border);
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 1px 2px rgba(0,0,0,.06);
+}
+.btn.primary{
+  background:var(--brand);
+  color:#fff;
+  border-color:var(--brand);
+}
+.btn:focus,.btn:hover{transform:translateY(-1px)}
+.link-arrow{font-weight:600;text-decoration:none}
+.link-arrow::after{content:" →"}
+
+/* ---------- Accessibility ---------- */
+a:focus,button:focus{
+  outline:3px solid var(--focus);
+  outline-offset:2px;
+}
+.skip-link{
+  position:absolute;left:-9999px;top:auto;
+}
+.skip-link:focus{
+  left:16px;top:12px;background:#fff;padding:.5rem 1rem;border-radius:8px;
+  box-shadow:var(--shadow);
+}
+
+/* ---------- Header / Nav ---------- */
 .site-header{
   background:var(--brand);
   color:#fff;
-  text-align:center;
-  padding:28px 16px;
 }
-.site-title{margin:0;font-size:2rem;font-weight:800;letter-spacing:.3px}
-.site-sub{margin:.4rem 0 0;font-size:1rem;opacity:.9}
-
-/* Nav */
-.navbar{
-  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
-  padding:10px 12px;background:#e9eff7
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;
 }
-.navbar a{color:var(--brand);text-decoration:none;font-weight:600}
-.navbar a.active{border-bottom:2px solid var(--brand)}
+.brand{
+  display:flex;gap:12px;align-items:center;color:#fff;text-decoration:none;
+}
+.site-logo{width:48px;height:48px;object-fit:contain;border-radius:50%;background:#fff12;display:block}
+.brand-title{display:block;font-size:1.25rem;font-weight:800}
+.brand-subtitle{display:block;font-size:.9rem;opacity:.9}
 
-/* Layout */
-.container{max-width:900px;margin:18px auto;padding:0 14px}
+.site-nav .nav-toggle{
+  background:#ffffff1a;border:1px solid #ffffff33;color:#fff;
+  padding:.5rem .75rem;border-radius:10px;display:inline-block;
+}
+.site-nav .nav-toggle:hover{background:#ffffff2a}
+.nav-list{
+  list-style:none;margin:0;padding:0;display:none;gap:10px;
+}
+.nav-list a{
+  color:#fff;text-decoration:none;font-weight:600;
+  padding:.5rem .75rem;border-radius:10px;display:block;
+}
+.nav-list a:hover{background:#ffffff1a}
+.nav-list.open{display:block}
+@media(min-width:920px){
+  .site-nav .nav-toggle{display:none}
+  .nav-list{display:flex}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(0deg,var(--brand) 0,var(--brand-dark) 100%);
+  color:#fff;
+  padding:28px 0 36px;
+}
+.hero-title{margin:0 0 8px;font-size:1.6rem}
+.hero .lead{color:#eef2f7;margin:0 0 16px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- Cards / Sections ---------- */
 .card{
-  background:var(--card);border-radius:12px;padding:18px;
-  box-shadow:0 1px 3px rgba(0,0,0,.05)
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 16px;
+  box-shadow:var(--shadow);
 }
-h1,h2{color:var(--brand);margin:.2rem 0 1rem}
-h1{font-size:1.9rem}
-h2{font-size:1.35rem}
-.lead{font-size:1.05rem;color:var(--muted)}
+.card h2,.card h3{margin-top:0}
+.card p{margin:.4rem 0}
 
-/* Footer */
+/* ---------- Footer ---------- */
 .site-footer{
-  margin-top:28px;background:#222;color:#fff;text-align:center;
-  padding:16px;font-size:.9rem
+  background:#111827;color:#e5e7eb;margin-top:28px;
 }
-
-/* Links & buttons */
-a{color:var(--brand)}
-.btn{
-  display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-  padding:10px 14px;border-radius:10px;font-weight:600
-}
-
-/* Responsive tweaks */
-@media (min-width:700px){
-  .site-title{font-size:2.4rem}
-  .card{padding:22px}
-}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:12px;flex-wrap:wrap}
+.footer-nav a{color:#cbd5e1;text-decoration:none;margin-right:12px}
+.footer-nav a:hover{color:#fff}
