@@ -1,81 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — EEOC Explained</title>
-  <meta name="description" content="Contact EEOC Explained or find help if you need legal advice.">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Contact EEOC Explained with feedback or suggestions." />
+  <link rel="canonical" href="https://eeocexplained.github.io/contact" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    .field{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+    .form{display:grid;gap:12px}
+    .field label{display:block;font-weight:600;margin-bottom:6px}
     .field input,.field textarea{
-      border:1px solid var(--border); border-radius:12px; padding:10px;
-      background:#fff; font:inherit;
+      width:100%;padding:.7rem .8rem;border:1px solid var(--border);
+      border-radius:12px;background:#fff
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="Clipped_image_20251006_101225.png" alt="EEOC Explained logo" width="56" height="56" />
-      <div>
-        <h1 class="site-title">EEOC Explained</h1>
-        <p class="site-sub">Plain-English guidance for workers and employers</p>
-      </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img src="logo.png" alt="EEOC Explained logo" class="site-logo" />
+        <span class="brand-text">
+          <span class="brand-title">EEOC Explained</span>
+          <span class="brand-subtitle">Workplace rights in plain English</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+        <ul id="nav-menu" class="nav-list">
+          <li><a href="./">Home</a></li>
+          <li><a href="checklist">Checklist</a></li>
+          <li><a href="resources">Resources</a></li>
+          <li><a href="about">About</a></li>
+          <li><a aria-current="page" href="contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="navbar" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="checklist.html">Checklist</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
   </header>
 
-  <main class="container">
+  <main id="main" class="container" role="main">
     <section class="card">
-      <h2>Contact</h2>
-      <p class="lead">Questions or suggestions? Send a message below. For legal advice about your situation, consider speaking with an attorney.</p>
+      <h1>Contact</h1>
+      <p class="lead">Questions or suggestions? We’d love to hear from you.</p>
 
-      <!-- Simple mailto form (no server needed) -->
-      <form action="mailto:eeocexplained@gmail.com" method="post" enctype="text/plain">
+      <!-- Note: no backend — this opens the user's email client -->
+      <form class="form" action="mailto:eeocexplained@gmail.com" method="post" enctype="text/plain">
         <div class="field">
-          <label for="name">Your name</label>
-          <input id="name" name="Name" type="text" required />
+          <label for="name">Name</label>
+          <input id="name" name="Name" type="text" autocomplete="name" required>
         </div>
-
         <div class="field">
-          <label for="email">Your email</label>
-          <input id="email" name="Email" type="email" required />
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" autocomplete="email" required>
         </div>
-
         <div class="field">
           <label for="msg">Message</label>
           <textarea id="msg" name="Message" rows="6" required></textarea>
         </div>
-
-        <div class="cta-row">
-          <button class="btn" type="submit">Send</button>
-          <a class="btn btn-ghost" href="mailto:eeocexplained@gmail.com?subject=EEOC%20Explained%20Inquiry">Open email app</a>
-        </div>
+        <button class="btn primary" type="submit">Send</button>
       </form>
-    </section>
 
-    <section class="grid">
-      <article class="card">
-        <h3>Need Legal Advice?</h3>
-        <p class="muted">This site is educational only. If you need advice, consider contacting a licensed attorney in your state.</p>
-      </article>
-      <article class="card">
-        <h3>Data & Privacy</h3>
-        <p class="muted">Form contents are sent by your email app. We don’t store messages on this website.</p>
-      </article>
+      <p style="margin-top:10px"><strong>Tip:</strong> Replace <code>eeocexplained@gmail.com</code> in this page with your real email address.</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="y"></span> EEOC Explained — All rights reserved.</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
+      const btn=e.currentTarget, m=document.getElementById('nav-menu');
+      const open=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded',!open); m.classList.toggle('open');
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
