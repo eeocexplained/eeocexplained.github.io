@@ -1,131 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EEOC Explained — Workplace Rights Simplified</title>
-  <style>
-    :root{
-      --brand:#0a66c2;
-      --ink:#222;
-      --bg:#f4f6f8;
-      --card:#fff;
-      --muted:#6b7280;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:"Segoe UI",Arial,sans-serif;
-      background:var(--bg); color:var(--ink); text-align:center;
-    }
-    header{background:var(--brand); color:#fff; padding:24px 12px}
-    header h1{margin:0 0 6px; font-size:34px}
-    header p{margin:0; opacity:.95}
+/* ===== Base ===== */
+:root{
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #222;
+  --muted: #5a6976;
+  --brand: #0a66c2;
+  --brand-700:#084f97;
+  --border: #e4e7eb;
+  --radius: 14px;
+}
 
-    main{max-width:900px; margin:0 auto; padding:28px 14px}
-    section{margin:22px auto; text-align:left}
-    h2{color:var(--brand); margin:0 0 10px; text-align:center}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
 
-    .card{
-      background:var(--card); border-radius:12px; padding:18px;
-      box-shadow:0 6px 24px rgba(0,0,0,.06);
-    }
-    .lead{font-size:18px; line-height:1.6; text-align:center}
-    .checklist{list-style:none; padding:0; margin:14px 0}
-    .checklist li{
-      display:flex; gap:12px; align-items:flex-start;
-      padding:14px 10px; border-top:1px solid #e5e7eb;
-    }
-    .checklist li:first-child{border-top:none}
-    .checklist input[type="checkbox"]{
-      width:22px; height:22px; margin-top:2px; flex:0 0 22px;
-      accent-color:var(--brand); cursor:pointer;
-    }
-    .muted{color:var(--muted)}
-    footer{background:#222; color:#fff; padding:16px 10px; margin-top:32px; text-align:center}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>EEOC Explained</h1>
-    <p>Simplifying workplace rights, discrimination law, and the EEOC process</p>
-  </header>
+/* ===== Header & Nav ===== */
+.site-header{
+  background:var(--brand);
+  color:#fff;
+  padding:18px 16px 8px;
+  box-shadow:0 2px 0 rgba(0,0,0,.05);
+}
+.brand{
+  display:flex; gap:12px; align-items:center;
+  max-width:1100px;margin:0 auto 10px;
+}
+.brand img{display:block;border-radius:50%}
+.site-title{margin:0;font-size:1.6rem;line-height:1.2}
+.site-sub{margin:4px 0 0;color:#e6eef7;font-size:.95rem}
 
-  <main>
-    <section class="card">
-      <h2>Welcome to EEOC Explained</h2>
-      <p class="lead">
-        This site helps you understand your workplace rights, how to file or respond to an EEOC charge,
-        and what to expect during the investigation process — all in plain, accessible language.
-      </p>
-      <p class="lead muted"><strong>Coming soon:</strong> video guides, templates, and case insights to help you navigate every step.</p>
-    </section>
+.navbar{
+  display:flex; gap:8px; flex-wrap:wrap;
+  max-width:1100px; margin:0 auto 8px; padding:4px 0 8px;
+}
+.navbar a{
+  color:#e8f2ff; text-decoration:none; padding:8px 12px;
+  border-radius:10px; font-weight:600;
+}
+.navbar a:hover{background:rgba(255,255,255,.12)}
+.navbar a.active{background:#fff;color:var(--brand)}
 
-    <!-- ✅ EEOC Checklist (saved to the browser so progress sticks) -->
-    <section class="card" id="eeoc-checklist">
-      <h2>EEOC Complaint Checklist</h2>
-      <p class="muted" style="text-align:center;margin-top:6px">
-        Use this quick checklist to track your progress. Your selections are saved in your browser.
-      </p>
+/* ===== Layout ===== */
+.container{max-width:1100px;margin:24px auto;padding:0 16px}
+.grid{
+  display:grid; gap:16px; margin-top:16px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+h1,h2,h3{line-height:1.25;margin:0 0 .4em}
+h2{font-size:1.4rem}
+h3{font-size:1.15rem}
+.lead{font-size:1.05rem}
+.muted{color:var(--muted)}
+.list{padding-left:1.1rem;margin:.4rem 0}
+.list li{margin:.25rem 0}
 
-      <ul class="checklist" role="list">
-        <li>
-          <input type="checkbox" id="step1">
-          <label for="step1"><strong>File an EEOC Charge</strong> — Submit your charge online, by mail, or in person at your nearest EEOC office.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="step2">
-          <label for="step2"><strong>Provide Supporting Evidence</strong> — Include emails, notes, witness names, or documents to strengthen your claim.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="step3">
-          <label for="step3"><strong>Respond to Information Requests</strong> — Watch for EEOC communications and reply promptly to stay on track.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="step4">
-          <label for="step4"><strong>Participate in Mediation</strong> — If offered, mediation can resolve your case faster without a full investigation.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="step5">
-          <label for="step5"><strong>Investigation</strong> — The EEOC may collect documents, conduct interviews, or visit the workplace.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="step6">
-          <label for="step6"><strong>Final Determination</strong> — You’ll receive results or a Notice of Right to Sue, allowing you to pursue your claim in court.</label>
-        </li>
-      </ul>
-    </section>
-  </main>
+/* ===== Buttons & Links ===== */
+.btn{
+  display:inline-block; padding:10px 14px; border-radius:12px;
+  background:var(--brand); color:#fff; text-decoration:none; font-weight:700;
+}
+.btn:hover{background:var(--brand-700)}
+.btn-ghost{
+  background:transparent; color:var(--brand); border:2px solid var(--brand);
+}
+.btn-ghost:hover{background:#eaf2fd}
+.cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.link{color:var(--brand); text-decoration:none; font-weight:700}
+.link:hover{text-decoration:underline}
 
-  <footer>© 2025 EEOC Explained — All rights reserved.</footer>
+/* ===== Footer ===== */
+.site-footer{
+  margin-top:32px; padding:16px; text-align:center;
+  color:#fff; background:#222;
+}
 
-  <script>
-    // Persist checklist state in localStorage
-    (function () {
-      const key = "eeoc-explained-checklist-v1";
-      const boxes = Array.from(document.querySelectorAll('#eeoc-checklist input[type="checkbox"]'));
-      // Load saved
-      try {
-        const saved = JSON.parse(localStorage.getItem(key) || "{}");
-        boxes.forEach(b => { if (saved[b.id]) b.checked = true; });
-      } catch {}
-      // Save on change
-      boxes.forEach(b => {
-        b.addEventListener("change", () => {
-          const data = {};
-          boxes.forEach(x => data[x.id] = x.checked);
-          localStorage.setItem(key, JSON.stringify(data));
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
-
-/* Responsive logo */
-img[alt="EEOC Explained Logo"] {
-  max-width: 160px;
-  width: 40%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
+/* Small tweaks on very narrow screens */
+@media (max-width:420px){
+  .site-title{font-size:1.35rem}
+  .site-sub{font-size:.9rem}
 }
