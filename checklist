@@ -56,4 +56,72 @@
   </main>
 
   <footer class="site-footer">
-    <p
+    <p>© <span id="y"></span> EEOC Explained — All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Checklist data
+    const ITEMS = [
+      { id: 'file', label: 'File an EEOC Charge', note: 'Submit your charge online, by mail, or in person at your nearest EEOC office.' },
+      { id: 'evidence', label: 'Provide Supporting Evidence', note: 'Include emails, notes, witness names, or documents to strengthen your claim.' },
+      { id: 'respond', label: 'Respond to Information Requests', note: 'Watch for EEOC communications and reply promptly to stay on track.' },
+      { id: 'mediation', label: 'Participate in Mediation (if offered)', note: 'Mediation can resolve your case faster without a full investigation.' },
+      { id: 'investigation', label: 'Investigation', note: 'The EEOC may collect documents, conduct interviews, or visit the workplace.' },
+      { id: 'final', label: 'Final Determination / Right to Sue', note: 'You may receive results or a Notice of Right to Sue.' }
+    ];
+
+    const KEY = 'eeoc-checklist-v1';
+
+    const el = id => document.getElementById(id);
+    const list = el('list');
+
+    function render(state = {}) {
+      list.innerHTML = ITEMS.map(item => `
+        <label style="display:block;padding:10px 0;border-top:1px solid var(--border)">
+          <input type="checkbox" id="${item.id}" ${state[item.id] ? 'checked' : ''} />
+          <strong style="margin-left:.5rem">${item.label}</strong>
+          <div class="muted" style="margin-left:1.85rem">${item.note}</div>
+        </label>
+      `).join('') + `<div style="border-top:1px solid var(--border)"></div>`;
+    }
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '{}'); }
+      catch { return {}; }
+    }
+
+    function getCurrent() {
+      const state = {};
+      ITEMS.forEach(i => state[i.id] = el(i.id)?.checked || false);
+      return state;
+    }
+
+    function save() {
+      localStorage.setItem(KEY, JSON.stringify(getCurrent()));
+      flash('Progress saved.');
+    }
+
+    function reset() {
+      localStorage.removeItem(KEY);
+      render({});
+      flash('Checklist reset.');
+    }
+
+    function flash(msg) {
+      const n = document.createElement('div');
+      n.textContent = msg;
+      n.setAttribute('role','status');
+      n.style.cssText = 'position:fixed;inset:auto 16px 16px auto;background:#111;color:#fff;padding:10px 12px;border-radius:10px';
+      document.body.appendChild(n);
+      setTimeout(()=>n.remove(), 1500);
+    }
+
+    // Init
+    render(load());
+    el('saveBtn').onclick = save;
+    el('resetBtn').onclick = reset;
+  </script>
+</body>
+</html>
