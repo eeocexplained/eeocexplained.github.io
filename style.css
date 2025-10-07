@@ -1,28 +1,94 @@
-/* ===== EEOC Explained — Government Look (classic) ===== */
+/* ==============================
+   EEOC.gov–style theme (v2)
+   Clean navy header, card content,
+   large readable type, mobile-first
+   ============================== */
+
+/* --- Root / tokens --- */
 :root{
-  --blue:#12355b;       /* federal navy */
-  --blue-700:#0f2a49;
+  --eeoc-navy:#0b3d62;
+  --eeoc-navy-900:#083251;
+  --eeoc-blue:#1b6ca8;
+  --eeoc-accent:#0e7ac4;
+  --ink:#101418;
+  --ink-2:#26313a;
+  --muted:#6a7783;
   --bg:#ffffff;
-  --surface:#f5f7fb;    /* soft section/card */
-  --ink:#1b1f24;        /* body text */
-  --muted:#5a6779;
-  --border:#dde3ea;
-  --gold:#ffbf47;       /* accent */
-  --link:#0b5ed7;
-  --radius:10px;
-  --container:1040px;
+  --bg-2:#f6f8fa;
+  --line:#e5ebf0;
+  --radius:14px;
+  --shadow:0 8px 24px rgba(16,20,24,.08);
 }
 
+/* --- Base --- */
 *{box-sizing:border-box}
-html,body{margin:0}
+html,body{margin:0;padding:0}
 body{
-  font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink); background:var(--bg);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--ink);
+  background:var(--bg);
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-h1,h2,h3{font-family:ui-serif,Georgia,Cambria,"Times New Roman",serif;margin:0 0 .35rem}
-h1{font-size:1.6rem} h2{font-size:1.35rem} h3{font-size:1.1rem}
-p{margin:.5rem 0} a{color:var(--link)}
+a{color:var(--eeoc-blue); text-decoration:underline}
+a:hover{color:var(--eeoc-accent)}
+img{max-width:100%; height:auto; display:block}
 
-.container{max-width:var(--container);margin:0 auto;padding:0 16px}
-.wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap
+/* --- Layout helpers --- */
+.container{max-width:1100px; margin:auto; padding:0 20px}
+.wrap{display:flex; align-items:center; justify-content:space-between; gap:24px}
+
+/* --- Header / Nav --- */
+header{
+  background:linear-gradient(180deg,var(--eeoc-navy),var(--eeoc-navy-900));
+  color:#fff;
+  padding:28px 0 18px;
+}
+header h1{margin:0; font-size:28px; letter-spacing:.2px}
+header .sub{margin:6px 0 0; color:#d6e3ee; font-size:14px}
+header nav{display:flex; gap:20px; flex-wrap:wrap}
+header nav a{
+  color:#e7f1f9; text-decoration:none; font-weight:600; padding:6px 10px; border-radius:8px
+}
+header nav a:hover{background:rgba(255,255,255,.12)}
+header nav a.active{background:#fff; color:var(--eeoc-navy)}
+
+/* --- Hero --- */
+.hero{
+  background:var(--bg-2);
+  border-bottom:1px solid var(--line);
+  padding:42px 0;
+}
+.hero h2{font-size:34px; line-height:1.25; margin:0 0 12px}
+.hero .lead{color:var(--ink-2); font-size:18px; margin:0 0 18px}
+.btn{
+  display:inline-block; background:var(--eeoc-blue); color:#fff; text-decoration:none;
+  padding:12px 18px; border-radius:10px; font-weight:700; box-shadow:var(--shadow)
+}
+.btn:hover{background:var(--eeoc-accent)}
+.btn.secondary{background:#fff; color:var(--eeoc-blue); border:1px solid var(--line); box-shadow:none}
+.btn.secondary:hover{border-color:var(--eeoc-blue)}
+
+/* --- Sections / Cards --- */
+.section{padding:26px 0 10px}
+.section h3{margin:0 0 8px; font-size:22px}
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px; margin:18px 0; box-shadow:var(--shadow)
+}
+.card h3{margin-top:0}
+ul.links{margin:0; padding-left:18px}
+ul.links li{margin:8px 0}
+
+/* --- Footer --- */
+footer{margin-top:36px; padding:22px 0; border-top:1px solid var(--line); background:#fbfdff}
+footer p{margin:0; color:var(--muted)}
+.footer-nav{display:flex; gap:14px; flex-wrap:wrap}
+.footer-nav a{text-decoration:none}
+.footer-nav a:hover{text-decoration:underline}
+
+/* --- Responsive --- */
+@media (max-width:720px){
+  .wrap{flex-direction:column; align-items:flex-start}
+  header{padding:22px 0 14px}
+  .hero h2{font-size:28px}
+}
