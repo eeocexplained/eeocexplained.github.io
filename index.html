@@ -4,13 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Explained — Understand Your Workplace Rights</title>
+  <meta name="description" content="Plain-English guides to the EEOC process — filing, mediation, investigation, and determinations — with official links and resources." />
   <link rel="stylesheet" href="/style.css" />
-  <meta name="description" content="Understand the EEOC process, filing timelines, and your workplace rights with plain-English guides and official resources." />
 </head>
-
 <body>
-
-<!-- ===== Header ===== -->
 <header>
   <div class="container wrap">
     <div>
@@ -27,49 +24,33 @@
   </div>
 </header>
 
-<!-- ===== Hero ===== -->
 <section class="hero">
   <div class="container">
     <h2>Understand Your Rights. Navigate the EEOC Process with Confidence.</h2>
-    <p class="lead">Learn how to file, respond, and follow through on discrimination complaints — all in plain English, based on official EEOC procedures.</p>
-    <p>
-      <a class="btn" href="/checklist.html">Open the Checklist</a>
-      <a class="btn secondary" href="/resources.html">View Resources</a>
-    </p>
+    <p class="lead">Clear steps from filing and mediation to investigation and determinations — all explained in plain English.</p>
+    <p><a class="btn" href="/checklist.html">Open the Checklist</a> <a class="btn secondary" href="/resources.html">View Resources</a></p>
   </div>
 </section>
 
-<!-- ===== Main Content ===== -->
 <main class="container">
   <div class="section">
     <h3>Start Here</h3>
-    <p>EEOC Explained simplifies the Equal Employment Opportunity process so employees, employers, and advocates can understand every step clearly — from filing a charge to final determination.</p>
-  </div>
-
-  <div class="card">
-    <h3>What You'll Learn</h3>
-    <ul>
-      <li>When and how to file an EEOC charge of discrimination</li>
-      <li>How mediation and investigation work</li>
-      <li>How to respond to employer statements and RFIs</li>
-      <li>What to expect from cause findings or right-to-sue notices</li>
-    </ul>
+    <p>We translate complex EEOC procedures into easy, practical guidance so you can act with confidence — whether you’re filing a charge, responding as an employer, or learning your rights.</p>
   </div>
 
   <div class="card">
     <h3>Quick Links</h3>
     <ul class="links">
-      <li><a target="_blank" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (File or Check a Charge)</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File a Charge</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/field">Find a Field Office</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/retaliation">Retaliation Resources</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/mediation">EEOC Mediation Program</a></li>
+      <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (File or Check a Charge)</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File a Charge</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/field">Find a Field Office</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/retaliation">Understanding Retaliation</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/mediation">EEOC Mediation Program</a></li>
     </ul>
-    <p class="sub" style="color:#5a6779">EEOC Explained is an independent educational resource, not affiliated with the U.S. EEOC.</p>
+    <p class="lead">Independent educational resource — not affiliated with the U.S. EEOC.</p>
   </div>
 </main>
 
-<!-- ===== Footer ===== -->
 <footer>
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
@@ -82,16 +63,7 @@
   </div>
 </footer>
 
-<!-- ===== Script: Year + Active Tab ===== -->
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  const norm = s => s.replace(/\/+$/,''); 
-  const path = norm(location.pathname || '/');
-  document.querySelectorAll('header nav a').forEach(a => {
-    const href = norm(a.getAttribute('href'));
-    if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
-  });
-</script>
-
-</body>
-</html>
+  (function(){
+    const norm = s => (s||'').replace(/\/+$/,'
