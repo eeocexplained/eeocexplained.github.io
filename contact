@@ -1,63 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — EEOC Explained</title>
-  <meta name="description" content="Contact EEOC Explained with feedback or suggestions." />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .form{display:grid;gap:.8rem}
-    .field label{display:block;font-weight:600;margin-bottom:.25rem}
-    .field input,.field textarea{width:100%;padding:.65rem .8rem;border:1px solid #e5e7eb;border-radius:8px;background:#fff}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – EEOC Explained</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title">EEOC Explained</h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="checklist">Checklist</a>
-        <a href="resources">Resources</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <h2>Contact</h2>
-      <p>Questions or suggestions? Send a message below. For legal advice about your situation, consider speaking with an attorney.</p>
-
-      <!-- This opens the visitor's email app. Replace with your real email. -->
-      <form class="form" action="mailto:eeocexplained@gmail.com" method="post" enctype="text/plain">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="Name" type="text" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="Email" type="email" required>
-        </div>
-        <div class="field">
-          <label for="msg">Message</label>
-          <textarea id="msg" name="Message" rows="6" required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send</button>
-      </form>
-
-      <p class="brand-subtitle" style="margin:.6rem 0 0">Privacy: This form uses your email app — nothing is stored on this site.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<header>
+  <h1>EEOC Explained</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>Contact</h2>
+  <p>For general feedback, reach out using the form below.</p>
+  <form action="mailto:eeocexplained@example.com" method="post" enctype="text/plain">
+    <p><input type="text" name="Name" placeholder="Your Name" required></p>
+    <p><input type="email" name="Email" placeholder="Your Email" required></p>
+    <p><textarea name="Message" rows="5" placeholder="Your Message" required></textarea></p>
+    <p><button type="submit">Send</button></p>
+  </form>
+</main>
+<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
