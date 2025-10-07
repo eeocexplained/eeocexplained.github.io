@@ -1,79 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resources — EEOC Explained</title>
-  <meta name="description" content="Guides and helpful references for each step in the EEOC process." />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .res{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:1rem}
-    .res + .res{margin-top:1rem}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources – EEOC Explained</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title">EEOC Explained</h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="checklist">Checklist</a>
-        <a href="resources">Resources</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <h2>Resources</h2>
-      <p>Key topics and plain-language explainers. Links are for convenience; always verify the latest official guidance.</p>
-    </section>
-
-    <section id="filing" class="res">
-      <h3>Filing a Charge</h3>
-      <ul>
-        <li>Who can file and what counts as discrimination</li>
-        <li>Deadlines and why dates matter</li>
-        <li>How to file (online, by mail, in person)</li>
-        <li>What information to include</li>
-      </ul>
-    </section>
-
-    <section id="investigation" class="res">
-      <h3>Mediation & Investigation</h3>
-      <ul>
-        <li>When mediation is offered and how it works</li>
-        <li>Responding to document requests and interviews</li>
-        <li>Staying organized during the investigation</li>
-      </ul>
-    </section>
-
-    <section id="final" class="res">
-      <h3>Final Determination & Next Steps</h3>
-      <ul>
-        <li>Types of determinations and what they mean</li>
-        <li>Notice of Right to Sue — timelines</li>
-        <li>Settlement possibilities and litigation basics</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script>
-  // highlight the current nav link
-  const path = location.pathname.replace(/\/+$/, "");
-  document.querySelectorAll(".site-nav a").forEach(a => {
-    const href = a.getAttribute("href").replace(/\/+$/, "");
-    if (path.endsWith(href)) a.classList.add("active");
-  });
-</script>
+<header>
+  <h1>EEOC Explained</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="resources.html" class="active">Resources</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>Resources</h2>
+  <ul>
+    <li>EEOC Official Website – <a href="https://www.eeoc.gov" target="_blank">eeoc.gov</a></li>
+    <li>Understanding Your Rights Under Title VII</li>
+    <li>Preparing for Mediation & Investigation</li>
+  </ul>
+</main>
+<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
