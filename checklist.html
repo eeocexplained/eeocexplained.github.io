@@ -1,37 +1,65 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EEOC Explained — Checklist</title>
-<link rel="stylesheet" href="/style.css">
-</head><body>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEOC Explained — Checklist</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
 <header>
   <div class="container wrap">
-    <div><h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1><p class="sub">Workplace rights & the EEOC process — in plain English</p></div>
+    <div>
+      <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
+      <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+    </div>
     <nav>
-      <a href="/">Home</a><a href="/checklist.html" class="active">Checklist</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a>
+      <a href="/">Home</a>
+      <a href="/checklist.html">Checklist</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main class="container">
-  <div class="section"><h2>EEOC Complaint Checklist</h2><p>Use this to track key steps.</p></div>
+  <div class="section">
+    <h2>EEOC Complaint Checklist</h2>
+    <p>Keep track of each stage of your case with this quick overview.</p>
+  </div>
 
   <div class="card">
     <ul>
-      <li>Confirm deadlines (usually 180–300 days); employer coverage (most laws: 15+ employees; age: 20+).</li>
-      <li>Gather facts & documents (timeline, emails/texts, witnesses).</li>
-      <li>Start intake online/phone/in person.</li>
-      <li>Review and submit your charge.</li>
-      <li>Watch for mediation, investigation requests, and deadlines.</li>
-      <li>Save everything; note Right-to-Sue timelines if issued.</li>
+      <li>Confirm filing deadlines (usually 180–300 days).</li>
+      <li>Gather all supporting documents (emails, texts, witnesses).</li>
+      <li>Submit an intake online or at a field office.</li>
+      <li>Respond promptly to requests for info or mediation offers.</li>
+      <li>Track updates via the <a href="https://publicportal.eeoc.gov/portal/" target="_blank">Public Portal</a>.</li>
+      <li>Review determination & Right-to-Sue notices carefully.</li>
     </ul>
-    <p>
-      <a class="btn" target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">Start Online (EEOC Portal)</a>
-      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File</a>
-    </p>
   </div>
 </main>
 
-<footer>…same as other pages…</footer>
-<script>/* same year + highlight script as home */</script>
-</body></html>
+<footer>
+  <div class="container wrap">
+    <p>© <span id="year"></span> EEOC Explained</p>
+    <div class="footer-nav">
+      <a href="https://facebook.com/EEOCExplained" target="_blank">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank">YouTube</a>
+      <a href="https://instagram.com/eeocexplained" target="_blank">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank">X</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const norm=s=>s.replace(/\/+$/,''); const path=norm(location.pathname||'/');
+  document.querySelectorAll('header nav a').forEach(a=>{
+    const href=norm(a.getAttribute('href'));
+    if((path==='/'&&href==='/')||(href&&href===path)) a.classList.add('active');
+  });
+</script>
+</body>
+</html>
