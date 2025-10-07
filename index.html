@@ -115,4 +115,42 @@
   </script>
 </body>
 </html>
+/* ====== Dark mode (auto) ====== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* slightly brighter accent, darker surfaces, light text */
+    --blue: #3da5ff;
+    --dark: #0a1626;
+    --light: #0d1117;   /* app background */
+    --text: #e6edf3;
+    --gray: #9aa4b2;
+  }
+
+  body {
+    background-color: var(--light);
+    color: var(--text);
+  }
+
+  /* Header / Hero */
+  .site-header {
+    background-color: #0b5ed7; /* darker blue reads better in dark mode */
+  }
+  .brand-subtitle { opacity: 0.85; }
+
+  .hero {
+    background: #0b5ed7;
+    color: #fff;
+  }
+
+  /* Nav */
+  .site-nav a { color: #fff; }
+  .site-nav a:hover { text-decoration: underline; }
+
+  /* Cards & containers */
+  .card {
+    background-color: #111827;               /* deep gray */
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /*
    
