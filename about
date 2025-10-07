@@ -1,54 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — EEOC Explained</title>
-  <meta name="description" content="Why this site exists and how we make the EEOC process easier to understand." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – EEOC Explained</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title">EEOC Explained</h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="checklist">Checklist</a>
-        <a href="resources">Resources</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <h2>About EEOC Explained</h2>
-      <p>We translate complex rules and procedures into practical steps you can actually use. We are not the EEOC and we don’t provide legal advice — this site is educational only.</p>
-    </section>
-
-    <div class="grid">
-      <div class="card">
-        <h3>What you’ll find</h3>
-        <p>Plain-English explanations, timelines, and checklists covering filing, mediation/investigation, and final determination.</p>
-      </div>
-      <div class="card">
-        <h3>Our goal</h3>
-        <p>Clarity and access. So you can make informed decisions at every step of the EEOC process.</p>
-      </div>
-      <div class="card">
-        <h3>Coming soon</h3>
-        <p>Short videos, templates, and real-world examples to help you prepare.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<header>
+  <h1>EEOC Explained</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>About This Site</h2>
+  <p>EEOC Explained helps individuals understand their workplace rights, file EEOC complaints, and respond effectively — all explained in plain English.</p>
+</main>
+<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
