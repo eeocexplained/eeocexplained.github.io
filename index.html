@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Explained — Understand Your Workplace Rights</title>
-  <meta name="description" content="Plain-English guides to the EEOC process — filing, mediation, investigation, and determinations — with official links and resources." />
+  <meta name="description" content="Plain-English guides to the EEOC process — filing, mediation, investigation, and determinations — with official links." />
+  <!-- UPDATE: point to the new EEOC.gov style -->
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+
+<!-- UPDATE: Standardized header/nav (EEOC.gov style) -->
 <header>
   <div class="container wrap">
     <div>
@@ -24,11 +27,15 @@
   </div>
 </header>
 
+<!-- UPDATE: Hero section with strong headline + actions -->
 <section class="hero">
   <div class="container">
     <h2>Understand Your Rights. Navigate the EEOC Process with Confidence.</h2>
     <p class="lead">Clear steps from filing and mediation to investigation and determinations — all explained in plain English.</p>
-    <p><a class="btn" href="/checklist.html">Open the Checklist</a> <a class="btn secondary" href="/resources.html">View Resources</a></p>
+    <p>
+      <a class="btn" href="/checklist.html">Open the Checklist</a>
+      <a class="btn secondary" href="/resources.html">View Resources</a>
+    </p>
   </div>
 </section>
 
@@ -47,10 +54,11 @@
       <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/retaliation">Understanding Retaliation</a></li>
       <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/mediation">EEOC Mediation Program</a></li>
     </ul>
-    <p class="lead">Independent educational resource — not affiliated with the U.S. EEOC.</p>
+    <p class="lead" style="margin-top:10px;color:#667684">Independent educational resource — not affiliated with the U.S. EEOC.</p>
   </div>
 </main>
 
+<!-- UPDATE: Standardized footer across all pages -->
 <footer>
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
@@ -64,6 +72,16 @@
 </footer>
 
 <script>
+  /* UPDATE: auto-year + highlight current tab */
   document.getElementById('year').textContent = new Date().getFullYear();
   (function(){
-    const norm = s => (s||'').replace(/\/+$/,'
+    const norm = s => (s||'').replace(/\/+$/,'');
+    const path = norm(location.pathname || '/');
+    document.querySelectorAll('header nav a').forEach(a=>{
+      const href = norm(a.getAttribute('href'));
+      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
+    });
+  })();
+</script>
+</body>
+</html>
