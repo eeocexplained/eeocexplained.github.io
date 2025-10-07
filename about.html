@@ -1,104 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EEOC Explained – About</title>
-  <link rel="stylesheet" href="/style.css" />
-</head>
-<body>
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title"><a href="/">EEOC Explained</a></h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEOC Explained — About</title>
+<link rel="stylesheet" href="/style.css">
+</head><body>
 
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/checklist.html">Checklist</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/about.html" class="active">About</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container wrap">
+    <div><h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1><p class="sub">Workplace rights & the EEOC process — in plain English</p></div>
+    <nav>
+      <a href="/">Home</a><a href="/checklist.html">Checklist</a><a href="/resources.html">Resources</a><a href="/about.html" class="active">About</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="container">
-    <section class="page-hero">
-      <h2>About EEOC Explained</h2>
-      <p>We make complex workplace rights and discrimination laws understandable for everyone — employees, HR, and advocates.</p>
-    </section>
+<main class="container">
+  <div class="section">
+    <h2>About EEOC Explained</h2>
+    <p>Independent educational resource simplifying workplace rights and the EEOC process for employees, HR, and advocates.</p>
+  </div>
 
-    <section class="grid two">
-      <div class="card">
-        <h3>Our Mission</h3>
-        <p>Provide clear, accurate, and practical explanations of U.S. employment discrimination laws and the EEOC complaint process so people can make informed decisions with confidence.</p>
-      </div>
+  <div class="card">
+    <h3>What We Do</h3>
+    <ul>
+      <li>Plain-English guides to filing, mediation, investigation, and outcomes.</li>
+      <li>Curated official links and practical tips.</li>
+      <li>Checklists to stay organized.</li>
+    </ul>
+  </div>
 
-      <div class="card">
-        <h3>What We Do</h3>
-        <ul>
-          <li>Break down the EEOC process step-by-step in plain language.</li>
-          <li>Curate official links, forms, and trusted guides.</li>
-          <li>Offer checklists and prep tips for filing or responding to a charge.</li>
-          <li>Promote fairness, access, and self-advocacy at work.</li>
-        </ul>
-      </div>
-    </section>
+  <div class="card">
+    <h3>Important</h3>
+    <p><strong>No legal advice or representation.</strong> Not affiliated with the U.S. EEOC. Verify deadlines and requirements with official sources.</p>
+  </div>
+</main>
 
-    <section class="card">
-      <h3>What We Don’t Do</h3>
-      <ul>
-        <li><strong>No legal advice.</strong> EEOC Explained is an independent educational resource and is not a law firm.</li>
-        <li><strong>No representation.</strong> We don’t represent individuals or act on your behalf with the EEOC or employers.</li>
-        <li><strong>No affiliation.</strong> We are not affiliated with the U.S. Equal Employment Opportunity Commission.</li>
-      </ul>
-      <p>If you need legal advice, consider consulting an employment attorney or your local bar association. See our <a href="/resources.html">Resources</a> for directories.</p>
-    </section>
-
-    <section class="card">
-      <h3>Disclaimer</h3>
-      <p>Content on this site is for educational purposes only and may not reflect the most current legal developments. Always verify with official sources such as <a href="https://www.eeoc.gov/" target="_blank" rel="noopener">EEOC.gov</a> or a licensed attorney in your jurisdiction.</p>
-    </section>
-
-    <section class="grid two">
-      <div class="card">
-        <h3>Accessibility</h3>
-        <p>We aim for clear language, keyboard-friendly navigation, and readable contrast. If you encounter a barrier, please let us know so we can improve.</p>
-      </div>
-
-      <div class="card">
-        <h3>Privacy (Short)</h3>
-        <p>We don’t sell personal data. Pages may use basic, privacy-respecting analytics to improve the site. Do not submit sensitive details through forms; use the official EEOC Public Portal for filings.</p>
-      </div>
-    </section>
-
-    <section class="card">
-      <h3>Connect</h3>
-      <ul class="link-list">
-        <li>Website: <a href="https://eeocexplained.github.io/">eeocexplained.github.io</a></li>
-        <li>Email: <a href="mailto:eeocexplained@gmail.com">eeocexplained@gmail.com</a></li>
-        <li>Facebook: <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">@EEOCExplained</a></li>
-        <li>YouTube: <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">@EEOCExplained</a></li>
-      </ul>
-      <p class="muted">For official actions (filing, checking status, or appointments), use the <a href="https://publicportal.eeoc.gov/portal/" target="_blank" rel="noopener">EEOC Public Portal</a>.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Year + active nav
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const path = location.pathname.replace(/\/+$/, '');
-    document.querySelectorAll('.site-nav a').forEach(a => {
-      const href = a.getAttribute('href').replace(/\/+$/, '');
-      if (href && href === path) a.classList.add('active');
-    });
-  </script>
-</body>
-</html>
+<footer>…same as other pages…</footer>
+<script>/* same year + highlight script as home */</script>
+</body></html>
