@@ -4,153 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Explained</title>
-  <meta name="description" content="Plain-English guidance on workplace rights, discrimination law, and the EEOC process." />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://eeocexplained.github.io/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="EEOC Explained" />
-  <meta property="og:description" content="Simplifying workplace rights, discrimination law, and the EEOC process." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://eeocexplained.github.io/" />
-
-  <!-- Styles -->
+  <meta name="description" content="Plain-English guidance on workplace rights and the EEOC process." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <!-- Header -->
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="./">
-        <span class="brand-text">
-          <span class="brand-title">EEOC Explained</span>
-          <span class="brand-subtitle">Workplace rights &amp; the EEOC process — in plain English</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
-        <span class="nav-toggle-bar"></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Main">
-        <ul>
-          <li><a href="./">Home</a></li>
-          <li><a href="checklist">Checklist</a></li>
-          <li><a href="resources">Resources</a></li>
-          <li><a href="about">About</a></li>
-          <li><a href="contact">Contact</a></li>
-        </ul>
+      <div>
+        <h1 class="brand-title">EEOC Explained</h1>
+        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
+      </div>
+      <nav class="site-nav">
+        <a href="./">Home</a>
+        <a href="checklist">Checklist</a>
+        <a href="resources">Resources</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>Understand your rights. Navigate the EEOC process with confidence.</h1>
-      <p class="lead">
-        Clear steps, practical templates, and what to expect — from filing a charge to final determination.
-      </p>
-
+      <h2>Understand your rights. Navigate the EEOC process with confidence.</h2>
+      <p>Clear steps and what to expect — from filing a charge to final determination.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="checklist">Open the EEOC Checklist</a>
-        <a class="btn btn-secondary" href="resources">Browse Resources</a>
+        <a class="btn btn-primary" href="checklist">Open the Checklist</a>
+        <a class="btn btn-secondary" href="resources">Resources</a>
       </div>
     </div>
   </section>
 
-  <main id="main">
-    <section class="container section-intro card">
-      <h2>Welcome to EEOC Explained</h2>
-      <p>
-        This site helps you understand your workplace rights, how to file or respond to an EEOC charge, and what to expect during the investigation process — all in plain, accessible language.
-      </p>
-      <p><strong>Coming soon:</strong> short videos, templates, and case insights to help at every step.</p>
+  <main class="container">
+    <section class="card">
+      <h3>Welcome</h3>
+      <p>This site helps you understand your workplace rights and how to file or respond to an EEOC charge.</p>
     </section>
-
-    <section class="container grid-3">
-      <article class="card">
-        <h3>File an EEOC Charge</h3>
-        <p>When, where, and how to file — deadlines, forms, and practical tips.</p>
-        <p><a class="link-arrow" href="checklist">Learn more →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Mediation &amp; Investigation</h3>
-        <p>What to expect, how to prepare, and how each step affects your case.</p>
-        <p><a class="link-arrow" href="resources">Learn more →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Final Determination</h3>
-        <p>Results, Notice of Right to Sue, and options if you disagree.</p>
-        <p><a class="link-arrow" href="resources">Learn more →</a></p>
-      </article>
-    </section>
+    <div class="grid">
+      <div class="card"><h3>File a Charge</h3><p>When, where, and how to file.</p></div>
+      <div class="card"><h3>Investigation</h3><p>What to expect and how to prepare.</p></div>
+      <div class="card"><h3>Determination</h3><p>Results and next steps.</p></div>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p id="copyright">© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-    </div>
+    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
   </footer>
 
   <script>
-    // Update year dynamically
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('site-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    }
   </script>
 </body>
 </html>
-/* ====== Dark mode (auto) ====== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* slightly brighter accent, darker surfaces, light text */
-    --blue: #3da5ff;
-    --dark: #0a1626;
-    --light: #0d1117;   /* app background */
-    --text: #e6edf3;
-    --gray: #9aa4b2;
-  }
-
-  body {
-    background-color: var(--light);
-    color: var(--text);
-  }
-
-  /* Header / Hero */
-  .site-header {
-    background-color: #0b5ed7; /* darker blue reads better in dark mode */
-  }
-  .brand-subtitle { opacity: 0.85; }
-
-  .hero {
-    background: #0b5ed7;
-    color: #fff;
-  }
-
-  /* Nav */
-  .site-nav a { color: #fff; }
-  .site-nav a:hover { text-decoration: underline; }
-
-  /* Cards & containers */
-  .card {
-    background-color: #111827;               /* deep gray */
-    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-  }
-
-  /*
-   
