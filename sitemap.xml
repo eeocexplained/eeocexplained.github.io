@@ -2,18 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eeocexplained.github.io/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://eeocexplained.github.io/about.html</loc>
+    <loc>https://eeocexplained.github.io/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://eeocexplained.github.io/checklist.html</loc>
+    <loc>https://eeocexplained.github.io/checklist</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://eeocexplained.github.io/resources.html</loc>
+    <loc>https://eeocexplained.github.io/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://eeocexplained.github.io/contact.html</loc>
+    <loc>https://eeocexplained.github.io/resources</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
