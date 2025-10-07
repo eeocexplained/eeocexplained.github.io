@@ -92,4 +92,45 @@
     <div class="card">
       <h3>8) Determination &amp; Next Steps</h3>
       <ul class="tight">
-        <li>Dismissal/Notice of Rights (right-to-sue) or
+        <li>Dismissal/Notice of Rights (right-to-sue) or reasonable cause finding.</li>
+        <li>Options may include settlement, conciliation, or litigation timelines.</li>
+      </ul>
+      <p><a href="https://www.eeoc.gov/how-eeoc-handles-discrimination-charges" target="_blank" rel="noopener">How EEOC handles charges ↗</a></p>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn" href="resources.html">Browse Resources</a>
+    <a class="btn btn-secondary" href="index.html">Back to Home</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Independent educational resource — not affiliated with the U.S. EEOC.</p>
+    <p>© <span id="year"></span> EEOC Explained</p>
+    <nav class="footer-links">
+      <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/EEOCExplained" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const path = location.pathname.replace(/\/+$/, '').split('/').pop() || 'index.html';
+  document.querySelectorAll('.site-nav a').forEach(a => {
+    const href = a.getAttribute('href').replace(/\/+$/, '');
+    if (href === path) a.classList.add('active');
+  });
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('mainnav');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>
