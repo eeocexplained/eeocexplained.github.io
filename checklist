@@ -1,87 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EEOC Complaint Checklist — EEOC Explained</title>
-  <meta name="description" content="Track your progress through the EEOC process. Your selections are saved in your browser." />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .step{display:flex;gap:.75rem;align-items:flex-start;background:#fff;border-radius:8px;padding:1rem;border:1px solid #e5e7eb}
-    .step + .step{margin-top:.75rem}
-    .step small{color:#6c757d;display:block;margin-top:.25rem}
-    .controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.75rem}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist – EEOC Explained</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title">EEOC Explained</h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="checklist">Checklist</a>
-        <a href="resources">Resources</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <h2>EEOC Complaint Checklist</h2>
-      <p>Use this to track your progress. Your selections are saved only on this device.</p>
-
-      <label class="step"><input type="checkbox" data-k="file"> <div><strong>File an EEOC Charge</strong><small>Submit online, by mail, or in person at an EEOC office.</small></div></label>
-      <label class="step"><input type="checkbox" data-k="evidence"> <div><strong>Provide Supporting Evidence</strong><small>Emails, notes, witness names, documents.</small></div></label>
-      <label class="step"><input type="checkbox" data-k="respond"> <div><strong>Respond to Information Requests</strong><small>Watch for EEOC communications and reply promptly.</small></div></label>
-      <label class="step"><input type="checkbox" data-k="mediation"> <div><strong>Participate in Mediation (if offered)</strong><small>May resolve the case faster without full investigation.</small></div></label>
-      <label class="step"><input type="checkbox" data-k="investigation"> <div><strong>Investigation</strong><small>Documents, interviews, and possible site visit.</small></div></label>
-      <label class="step"><input type="checkbox" data-k="final"> <div><strong>Final Determination / Right to Sue</strong><small>Results or a Notice of Right to Sue and deadlines.</small></div></label>
-
-      <div class="controls">
-        <button class="btn btn-primary" id="save">Save</button>
-        <button class="btn btn-secondary" id="reset">Reset</button>
-      </div>
-      <p class="brand-subtitle" style="margin:.4rem 0 0">Disclaimer: educational only; not legal advice.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-
-  <script>
-    const KEY='eeoc-checklist-v1';
-    const boxes=[...document.querySelectorAll('[data-k]')];
-    // load
-    try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');boxes.forEach(b=>b.checked=!!s[b.dataset.k]);}catch{}
-    // save/reset
-    document.getElementById('save').onclick=()=>{
-      const s={}; boxes.forEach(b=>s[b.dataset.k]=b.checked); localStorage.setItem(KEY,JSON.stringify(s));
-      alert('Progress saved on this device.');
-    };
-    document.getElementById('reset').onclick=()=>{ localStorage.removeItem(KEY); boxes.forEach(b=>b.checked=false); };
-    document.getElementById('year').textContent=new Date().getFullYear();
-  </script>
-<script>
-  // highlight the current nav link
-  const path = location.pathname.replace(/\/+$/, "");
-  document.querySelectorAll(".site-nav a").forEach(a => {
-    const href = a.getAttribute("href").replace(/\/+$/, "");
-    if (path.endsWith(href)) a.classList.add("active");
-  });
-</script>
-<script>
-  // highlight the current nav link
-  const path = location.pathname.replace(/\/+$/, "");
-  document.querySelectorAll(".site-nav a").forEach(a => {
-    const href = a.getAttribute("href").replace(/\/+$/, "");
-    if (path.endsWith(href)) a.classList.add("active");
-  });
-</script>
+<header>
+  <h1>EEOC Explained</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="checklist.html" class="active">Checklist</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>EEOC Complaint Checklist</h2>
+  <ul>
+    <li><input type="checkbox"> File a Charge</li>
+    <li><input type="checkbox"> Provide Evidence</li>
+    <li><input type="checkbox"> Respond to Requests</li>
+    <li><input type="checkbox"> Mediation</li>
+    <li><input type="checkbox"> Investigation</li>
+    <li><input type="checkbox"> Final Determination</li>
+  </ul>
+</main>
+<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
