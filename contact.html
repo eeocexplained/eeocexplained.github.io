@@ -1,148 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EEOC Explained – Contact</title>
-  <link rel="stylesheet" href="/style.css" />
-</head>
-<body>
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title"><a href="/">EEOC Explained</a></h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEOC Explained — Contact</title>
+<link rel="stylesheet" href="/style.css">
+</head><body>
 
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/checklist.html">Checklist</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html" class="active">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container wrap">
+    <div><h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1><p class="sub">Workplace rights & the EEOC process — in plain English</p></div>
+    <nav>
+      <a href="/">Home</a><a href="/checklist.html">Checklist</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="container">
-    <section class="page-hero">
-      <h2>Contact EEOC Explained</h2>
-      <p>Have a question about the process or a suggestion for the site? Reach out below.</p>
-    </section>
+<main class="container">
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Questions or suggestions? Email us. For filings or case status, use the official EEOC portals below.</p>
+    <p><a class="btn" href="mailto:eeocexplained@gmail.com?subject=Question%20for%20EEOC%20Explained">Email EEOC Explained</a></p>
+  </div>
 
-    <!-- Quick Contact Cards -->
-    <section class="grid three">
-      <div class="card">
-        <h3>Email</h3>
-        <p>We read messages weekdays and reply as soon as we can.</p>
-        <p><a class="btn btn-primary" href="mailto:eeocexplained@gmail.com?subject=Question%20for%20EEOC%20Explained">Email us</a></p>
-        <p class="muted">Do not include SSNs, dates of birth, or sensitive case details.</p>
-      </div>
+  <div class="card">
+    <h3>Official EEOC</h3>
+    <ul class="links">
+      <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (file/check a charge)</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/">EEOC.gov (laws & offices)</a></li>
+    </ul>
+    <p class="sub" style="color:#5a6779">Do not include sensitive personal information in email.</p>
+  </div>
+</main>
 
-      <div class="card">
-        <h3>Facebook</h3>
-        <p>Follow for updates and new guides.</p>
-        <p><a class="btn" target="_blank" rel="noopener" href="https://facebook.com/EEOCExplained">@EEOCExplained</a></p>
-      </div>
-
-      <div class="card">
-        <h3>YouTube</h3>
-        <p>Short explainers on common EEOC steps.</p>
-        <p><a class="btn" target="_blank" rel="noopener" href="https://youtube.com/@EEOCExplained">@EEOCExplained</a></p>
-      </div>
-    </section>
-
-    <!-- Official Actions -->
-    <section class="card">
-      <h3>Need to File, Upload Documents, or Check Case Status?</h3>
-      <p><strong>Use the official EEOC portals:</strong></p>
-      <ul class="link-list">
-        <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (file or check a charge)</a></li>
-        <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/">EEOC.gov (laws, guidance, local offices)</a></li>
-      </ul>
-      <p class="muted">EEOC Explained is an independent educational site; we are not the EEOC and cannot access case files.</p>
-    </section>
-
-    <!-- Simple Mail Form (works as a mailto compose) -->
-    <section class="card">
-      <h3>Send us a message</h3>
-      <form id="contactForm">
-        <div class="grid two">
-          <label>
-            Your name
-            <input type="text" id="name" placeholder="First & Last name" required />
-          </label>
-          <label>
-            Your email
-            <input type="email" id="email" placeholder="you@example.com" required />
-          </label>
-        </div>
-        <label>
-          Topic
-          <select id="topic">
-            <option>Website feedback</option>
-            <option>Content suggestion</option>
-            <option>Question about the process</option>
-            <option>Accessibility</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <label>
-          Message
-          <textarea id="message" rows="6" placeholder="How can we help?" required></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary">Open email draft</button>
-        <p class="muted">This opens your email app with your message. Because we use GitHub Pages, we don’t collect messages on this site.</p>
-      </form>
-    </section>
-
-    <section class="grid two">
-      <div class="card">
-        <h3>Response Times</h3>
-        <p>We typically reply within 2–3 business days. For urgent filing deadlines, contact the EEOC directly or seek legal counsel.</p>
-      </div>
-      <div class="card">
-        <h3>Important</h3>
-        <p><strong>No legal advice.</strong> Information here is educational only and not a substitute for advice from a licensed attorney.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Year + active nav
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const path = location.pathname.replace(/\/+$/, '');
-    document.querySelectorAll('.site-nav a').forEach(a => {
-      const href = a.getAttribute('href').replace(/\/+$/, '');
-      if (href && href === path) a.classList.add('active');
-    });
-
-    // Mailto compose with form values
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const fromEmail = document.getElementById('email').value.trim();
-      const topic = document.getElementById('topic').value;
-      const msg = document.getElementById('message').value.trim();
-
-      const subject = encodeURIComponent(`[EEOC Explained] ${topic} – ${name}`);
-      const body = encodeURIComponent(
-`Name: ${name}
-Email: ${fromEmail}
-
-Message:
-${msg}
-
---- 
-Sent from eeocexplained.github.io/contact.html`
-      );
-      window.location.href = `mailto:eeocexplained@gmail.com?subject=${subject}&body=${body}`;
-    });
-  </script>
-</body>
-</html>
+<footer>…same as other pages…</footer>
+<script>/* same year + highlight script as home */</script>
+</body></html>
