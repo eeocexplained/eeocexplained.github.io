@@ -1,31 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources – EEOC Explained</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resources — EEOC Explained</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>EEOC Explained</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="checklist.html">Checklist</a>
-    <a href="resources.html" class="active">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="./"><span class="brand-title">EEOC Explained</span><span class="brand-sub">Workplace rights in plain English</span></a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="site-nav" aria-label="Primary"><ul>
+      <li><a href="./">Home</a></li><li><a href="checklist.html">Checklist</a></li>
+      <li><a class="active" href="resources.html">Resources</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
 </header>
-<main>
-  <h2>Resources</h2>
-  <ul>
-    <li>EEOC Official Website – <a href="https://www.eeoc.gov" target="_blank">eeoc.gov</a></li>
-    <li>Understanding Your Rights Under Title VII</li>
-    <li>Preparing for Mediation & Investigation</li>
-  </ul>
+
+<main id="main" class="container">
+  <section class="section">
+    <h1>Resources</h1>
+    <div class="grid">
+      <article id="filing" class="card">
+        <h3>Filing a Charge</h3>
+        <ul>
+          <li>Who can file & what qualifies</li>
+          <li>Deadlines & why dates matter</li>
+          <li>How to file (online, mail, in person)</li>
+        </ul>
+      </article>
+      <article id="investigation" class="card">
+        <h3>Mediation & Investigation</h3>
+        <ul>
+          <li>When mediation is offered</li>
+          <li>Responding to requests/interviews</li>
+          <li>Staying organized</li>
+        </ul>
+      </article>
+      <article id="final" class="card">
+        <h3>Determinations & Next Steps</h3>
+        <ul>
+          <li>Types of determinations</li>
+          <li>Notice of Right to Sue</li>
+          <li>Settlement & litigation basics</li>
+        </ul>
+      </article>
+    </div>
+    <p class="lead">Links are provided for convenience; always check the latest official guidance at <a href="https://www.eeoc.gov" target="_blank" rel="noopener">EEOC.gov</a>.</p>
+  </section>
 </main>
-<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+
+<footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> EEOC Explained</p></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
