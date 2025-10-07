@@ -1,72 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EEOC Explained — Checklist</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEOC Checklist · EEOC Explained</title>
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
-<header>
-  <div class="container wrap">
+<header class="site-header">
+  <div class="container header-inner">
     <div>
-      <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
-      <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+      <h1 class="brand-title"><a href="index.html">EEOC Explained</a></h1>
+      <p class="brand-subtitle">Workplace rights &amp; the EEOC process — in plain English</p>
     </div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/checklist.html">Checklist</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav id="mainnav" class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
+<section class="hero hero--small">
+  <div class="container">
+    <h2>EEOC Filing Checklist</h2>
+    <p>Use this step-by-step list to prepare, file, and track your EEOC charge with confidence.</p>
+  </div>
+</section>
+
 <main class="container">
-  <div class="section">
-    <h2>EEOC Complaint Checklist</h2>
-    <p>Use this to track key steps.</p>
-  </div>
-
-  <div class="card">
-    <ul>
-      <li>Confirm filing deadlines (usually 180–300 days) and employer coverage (most laws: 15+ employees; age: 20+).</li>
-      <li>Gather facts & documents (timeline, emails/texts, witnesses).</li>
-      <li>Start intake online/phone/in person.</li>
-      <li>Review and submit your charge.</li>
-      <li>Watch for mediation, investigation requests, and deadlines.</li>
-      <li>Save everything; note Right-to-Sue timelines if issued.</li>
-    </ul>
-    <p>
-      <a class="btn" target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">Start Online (EEOC Portal)</a>
-      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File</a>
-      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/mediation">Mediation Program</a>
-    </p>
-  </div>
-</main>
-
-<footer>
-  <div class="container wrap">
-    <p>© <span id="year"></span> EEOC Explained</p>
-    <div class="footer-nav">
-      <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://instagram.com/eeocexplained" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
+  <div class="grid">
+    <div class="card">
+      <h3>1) Confirm Coverage</h3>
+      <ul class="tight">
+        <li>Employer has <strong>15+ employees</strong> (20+ for age claims).</li>
+        <li>Alleged conduct happened within the filing deadline (see Step 2).</li>
+        <li>Your issue fits a protected basis (race, sex, disability, age, etc.).</li>
+      </ul>
+      <p><a href="https://www.eeoc.gov/employers/small-business/coverage" target="_blank" rel="noopener">EEOC coverage overview ↗</a></p>
     </div>
-  </div>
-</footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  (function(){
-    const norm = s => (s||'').replace(/\/+$/,'');
-    const path = norm(location.pathname || '/');
-    document.querySelectorAll('header nav a').forEach(a=>{
-      const href = norm(a.getAttribute('href'));
-      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
-    });
-  })();
-</script>
-</body>
-</html>
+    <div class="card">
+      <h3>2) Mind the Deadlines</h3>
+      <ul class="tight">
+        <li><strong>180 days</strong> from the last incident (up to <strong>300 days</strong> in many states).</li>
+        <li>For federal employees, different timelines apply (see Step 7).</li>
+      </ul>
+      <p><a href="https://www.eeoc.gov/time-limits-file-charge" target="_blank" rel="noopener">Filing time limits ↗</a></p>
+    </div>
+
+    <div class="card">
+      <h3>3) Gather Key Facts &amp; Evidence</h3>
+      <ul class="tight">
+        <li>What happened, who was involved, when/where, and any witnesses.</li>
+        <li>Keep texts, emails, screenshots, policies, write-ups, performance reviews.</li>
+        <li>Note how you were harmed (pay, hours, promotion, termination, etc.).</li>
+      </ul>
+      <p><a href="https://www.eeoc.gov/filing-charge-discrimination" target="_blank" rel="noopener">What to include in a charge ↗</a></p>
+    </div>
+
+    <div class="card">
+      <h3>4) File the Charge</h3>
+      <p>Open an account in the EEOC Public Portal and submit your intake questionnaire/charge.</p>
+      <p><a class="btn btn-primary" href="https://publicportal.eeoc.gov" target="_blank" rel="noopener">Go to EEOC Public Portal ↗</a></p>
+    </div>
+
+    <div class="card">
+      <h3>5) Mediation (Optional)</h3>
+      <p>Many cases are offered free, confidential mediation early in the process.</p>
+      <p><a href="https://www.eeoc.gov/mediation" target="_blank" rel="noopener">EEOC Mediation Program ↗</a></p>
+    </div>
+
+    <div class="card">
+      <h3>6) Investigation</h3>
+      <ul class="tight">
+        <li>Employer is notified; both sides may upload evidence in the portal.</li>
+        <li>Respond quickly to EEOC requests; update your contact info.</li>
+      </ul>
+      <p><a href="https://www.eeoc.gov/what-expect-after-you-file-charge" target="_blank" rel="noopener">What to expect after filing ↗</a></p>
+    </div>
+
+    <div class="card">
+      <h3>7) Special: Federal Employees</h3>
+      <p>First contact an EEO Counselor <strong>within 45 days</strong> of the incident.</p>
+      <p><a href="https://www.eeoc.gov/federal-sector/overview-federal-sector-eeo-complaint-process" target="_blank" rel="noopener">Federal sector process ↗</a></p>
+    </div>
+
+    <div class="card">
+      <h3>8) Determination &amp; Next Steps</h3>
+      <ul class="tight">
+        <li>Dismissal/Notice of Rights (right-to-sue) or
