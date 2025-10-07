@@ -1,70 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EEOC Explained — About</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About · EEOC Explained</title>
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
-<header>
-  <div class="container wrap">
+<header class="site-header">
+  <div class="container header-inner">
     <div>
-      <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
-      <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+      <h1 class="brand-title"><a href="index.html">EEOC Explained</a></h1>
+      <p class="brand-subtitle">Workplace rights &amp; the EEOC process — in plain English</p>
     </div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/checklist.html">Checklist</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav id="mainnav" class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="container">
-  <div class="section">
+<section class="hero hero--small">
+  <div class="container">
     <h2>About EEOC Explained</h2>
-    <p>Independent educational resource simplifying workplace rights and the EEOC process for employees, HR, and advocates.</p>
+    <p>Independent educational resource to make employment-rights information accessible.</p>
+  </div>
+</section>
+
+<main class="container">
+  <div class="card">
+    <h3>Our mission</h3>
+    <p>We translate complex EEOC procedures into clear, practical guidance so people can act with confidence—whether filing a charge, responding as an employer, or learning their rights.</p>
   </div>
 
-  <div class="card">
-    <h3>What We Do</h3>
-    <ul>
-      <li>Plain-English guides to filing, mediation, investigation, and outcomes.</li>
-      <li>Curated official links and practical tips.</li>
-      <li>Checklists to stay organized.</li>
-    </ul>
+  <div class="grid">
+    <div class="card">
+      <h3>What we do</h3>
+      <ul class="tight">
+        <li>Plain-language explainers and checklists</li>
+        <li>Curated links to official EEOC resources</li>
+        <li>Templates and tips for each stage of the process</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What we don’t do</h3>
+      <ul class="tight">
+        <li>We’re not affiliated with the U.S. EEOC</li>
+        <li>We don’t provide legal advice</li>
+        <li>For legal advice, consult a licensed attorney</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Important</h3>
-    <p><strong>No legal advice or representation.</strong> Not affiliated with the U.S. EEOC. Verify deadlines and requirements with official sources.</p>
+  <div class="cta-row">
+    <a class="btn" href="resources.html">Browse Resources</a>
+    <a class="btn btn-secondary" href="checklist.html">Open the Checklist</a>
   </div>
 </main>
 
-<footer>
-  <div class="container wrap">
+<footer class="site-footer">
+  <div class="container">
+    <p>Independent educational resource — not affiliated with the U.S. EEOC.</p>
     <p>© <span id="year"></span> EEOC Explained</p>
-    <div class="footer-nav">
+    <nav class="footer-links">
       <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
       <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://instagram.com/eeocexplained" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://instagram.com/EEOCExplained" target="_blank" rel="noopener">Instagram</a>
       <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
-    </div>
+    </nav>
   </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  (function(){
-    const norm = s => (s||'').replace(/\/+$/,'');
-    const path = norm(location.pathname || '/');
-    document.querySelectorAll('header nav a').forEach(a=>{
-      const href = norm(a.getAttribute('href'));
-      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
-    });
-  })();
+  const path = location.pathname.replace(/\/+$/, '').split('/').pop() || 'index.html';
+  document.querySelectorAll('.site-nav a').forEach(a => {
+    const href = a.getAttribute('href').replace(/\/+$/, '');
+    if (href === path) a.classList.add('active');
+  });
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('mainnav');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 </script>
 </body>
 </html>
