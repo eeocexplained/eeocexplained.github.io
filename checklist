@@ -1,34 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checklist – EEOC Explained</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EEOC Complaint Checklist — EEOC Explained</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>EEOC Explained</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="checklist.html" class="active">Checklist</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="./"><span class="brand-title">EEOC Explained</span><span class="brand-sub">Workplace rights in plain English</span></a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="site-nav" aria-label="Primary"><ul>
+      <li><a href="./">Home</a></li><li><a class="active" href="checklist.html">Checklist</a></li>
+      <li><a href="resources.html">Resources</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
 </header>
-<main>
-  <h2>EEOC Complaint Checklist</h2>
-  <ul>
-    <li><input type="checkbox"> File a Charge</li>
-    <li><input type="checkbox"> Provide Evidence</li>
-    <li><input type="checkbox"> Respond to Requests</li>
-    <li><input type="checkbox"> Mediation</li>
-    <li><input type="checkbox"> Investigation</li>
-    <li><input type="checkbox"> Final Determination</li>
-  </ul>
+
+<main id="main" class="container">
+  <section class="section">
+    <h1>EEOC Complaint Checklist</h1>
+    <p class="lead">Use this to track your progress. Selections are saved on this device.</p>
+
+    <div class="card">
+      <label><input type="checkbox" data-k="file"> File an EEOC Charge</label><br>
+      <label><input type="checkbox" data-k="evidence"> Provide Supporting Evidence</label><br>
+      <label><input type="checkbox" data-k="respond"> Respond to Information Requests</label><br>
+      <label><input type="checkbox" data-k="mediation"> Participate in Mediation (if offered)</label><br>
+      <label><input type="checkbox" data-k="investigation"> Investigation</label><br>
+      <label><input type="checkbox" data-k="final"> Final Determination / Right to Sue</label><br>
+      <div style="margin-top:10px">
+        <button class="btn primary" id="save">Save</button>
+        <button class="btn ghost" id="reset">Reset</button>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> EEOC Explained</p></div></footer>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const KEY='eeoc-checklist-v1', boxes=[...document.querySelectorAll('[data-k]')];
+  try{const s=JSON.parse(localStorage.getItem(KEY)||'{}'); boxes.forEach(b=>b.checked=!!s[b.dataset.k]);}catch{}
+  document.getElementById('save').onclick=()=>{const s={}; boxes.forEach(b=>s[b.dataset.k]=b.checked); localStorage.setItem(KEY,JSON.stringify(s)); alert('Saved on this device.');};
+  document.getElementById('reset').onclick=()=>{localStorage.removeItem(KEY); boxes.forEach(b=>b.checked=false);};
+</script>
 </body>
 </html>
