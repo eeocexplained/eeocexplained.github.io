@@ -8,7 +8,10 @@
 <body>
 <header>
   <div class="container wrap">
-    <div><h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1><p class="sub">Workplace rights & the EEOC process — in plain English</p></div>
+    <div>
+      <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
+      <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+    </div>
     <nav>
       <a href="/">Home</a>
       <a href="/checklist.html">Checklist</a>
@@ -21,19 +24,29 @@
 
 <main class="container">
   <div class="section">
-    <h2>Official EEOC Resources</h2>
-    <p>Access the latest information directly from the U.S. Equal Employment Opportunity Commission.</p>
+    <h2>Official & Trusted Resources</h2>
+    <p>All links open in a new tab.</p>
   </div>
 
   <div class="card">
-    <h3>EEOC.gov Pages</h3>
+    <h3>EEOC (Official)</h3>
     <ul class="links">
-      <li><a target="_blank" href="https://publicportal.eeoc.gov/portal/">Public Portal (File a Charge)</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/field">EEOC Field Offices</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/retaliation">Retaliation Overview</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/mediation">Mediation Program</a></li>
-      <li><a target="_blank" href="https://www.eeoc.gov/laws-guidance">EEOC Laws & Guidance</a></li>
+      <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (File/Check a Charge)</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File a Charge</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/field">EEOC Field Offices</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/retaliation">Retaliation Overview</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/mediation">Mediation Program</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/statutes/laws-enforced-eeoc">Laws Enforced by EEOC</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>State/Local & Education</h3>
+    <ul class="links">
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/fair-employment-practices-agencies-fepas-and-referral-contacts">FEPA & Referral Agencies</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.workplacefairness.org/">Workplace Fairness</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.nolo.com/legal-encyclopedia/employment-law">Nolo Employment Law</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.ada.gov/">ADA.gov</a></li>
     </ul>
   </div>
 </main>
@@ -42,21 +55,24 @@
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
     <div class="footer-nav">
-      <a href="https://facebook.com/EEOCExplained" target="_blank">Facebook</a>
-      <a href="https://youtube.com/@EEOCExplained" target="_blank">YouTube</a>
-      <a href="https://instagram.com/eeocexplained" target="_blank">Instagram</a>
-      <a href="https://x.com/EEOCExplained" target="_blank">X</a>
+      <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/eeocexplained" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const norm=s=>s.replace(/\/+$/,''); const path=norm(location.pathname||'/');
-  document.querySelectorAll('header nav a').forEach(a=>{
-    const href=norm(a.getAttribute('href'));
-    if((path==='/'&&href==='/')||(href&&href===path)) a.classList.add('active');
-  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    const norm = s => (s||'').replace(/\/+$/,'');
+    const path = norm(location.pathname || '/');
+    document.querySelectorAll('header nav a').forEach(a=>{
+      const href = norm(a.getAttribute('href'));
+      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
+    });
+  })();
 </script>
 </body>
 </html>
