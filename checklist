@@ -5,101 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Complaint Checklist — EEOC Explained</title>
   <meta name="description" content="Track your progress through the EEOC process. Your selections are saved in your browser." />
-  <link rel="canonical" href="https://eeocexplained.github.io/checklist" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    .steps{display:grid;gap:12px}
-    .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 14px}
-    .step small{color:var(--muted);display:block;margin-top:4px}
-    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .step{display:flex;gap:.75rem;align-items:flex-start;background:#fff;border-radius:8px;padding:1rem;border:1px solid #e5e7eb}
+    .step + .step{margin-top:.75rem}
+    .step small{color:#6c757d;display:block;margin-top:.25rem}
+    .controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.75rem}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="./">
-        <img src="logo.png" alt="EEOC Explained logo" class="site-logo" />
-        <span class="brand-text">
-          <span class="brand-title">EEOC Explained</span>
-          <span class="brand-subtitle">Workplace rights in plain English</span>
-        </span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
-        <ul id="nav-menu" class="nav-list">
-          <li><a href="./">Home</a></li>
-          <li><a aria-current="page" href="checklist">Checklist</a></li>
-          <li><a href="resources">Resources</a></li>
-          <li><a href="about">About</a></li>
-          <li><a href="contact">Contact</a></li>
-        </ul>
+      <div>
+        <h1 class="brand-title">EEOC Explained</h1>
+        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
+      </div>
+      <nav class="site-nav">
+        <a href="./">Home</a>
+        <a href="checklist">Checklist</a>
+        <a href="resources">Resources</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="container" role="main">
+  <main class="container">
     <section class="card">
-      <h1>EEOC Complaint Checklist</h1>
-      <p class="lead">Use this checklist to track your progress. Your selections are saved in your browser.</p>
+      <h2>EEOC Complaint Checklist</h2>
+      <p>Use this to track your progress. Your selections are saved only on this device.</p>
 
-      <div class="steps" id="steps">
-        <label class="step"><input type="checkbox" data-key="file-charge"> <div><strong>File an EEOC Charge</strong><small>Submit online, by mail, or in person at an EEOC office.</small></div></label>
-        <label class="step"><input type="checkbox" data-key="evidence"> <div><strong>Provide Supporting Evidence</strong><small>Emails, notes, witness names, documents, etc.</small></div></label>
-        <label class="step"><input type="checkbox" data-key="respond-info"> <div><strong>Respond to Information Requests</strong><small>Watch for EEOC communications and reply promptly.</small></div></label>
-        <label class="step"><input type="checkbox" data-key="mediation"> <div><strong>Participate in Mediation (if offered)</strong><small>Mediation can resolve a case faster without a full investigation.</small></div></label>
-        <label class="step"><input type="checkbox" data-key="investigation"> <div><strong>Investigation</strong><small>EEOC may collect documents, conduct interviews, or visit the workplace.</small></div></label>
-        <label class="step"><input type="checkbox" data-key="final"> <div><strong>Final Determination</strong><small>Results or a Notice of Right to Sue.</small></div></label>
-      </div>
+      <label class="step"><input type="checkbox" data-k="file"> <div><strong>File an EEOC Charge</strong><small>Submit online, by mail, or in person at an EEOC office.</small></div></label>
+      <label class="step"><input type="checkbox" data-k="evidence"> <div><strong>Provide Supporting Evidence</strong><small>Emails, notes, witness names, documents.</small></div></label>
+      <label class="step"><input type="checkbox" data-k="respond"> <div><strong>Respond to Information Requests</strong><small>Watch for EEOC communications and reply promptly.</small></div></label>
+      <label class="step"><input type="checkbox" data-k="mediation"> <div><strong>Participate in Mediation (if offered)</strong><small>May resolve the case faster without full investigation.</small></div></label>
+      <label class="step"><input type="checkbox" data-k="investigation"> <div><strong>Investigation</strong><small>Documents, interviews, and possible site visit.</small></div></label>
+      <label class="step"><input type="checkbox" data-k="final"> <div><strong>Final Determination / Right to Sue</strong><small>Results or a Notice of Right to Sue and deadlines.</small></div></label>
 
       <div class="controls">
-        <button class="btn" id="export">Export progress</button>
-        <button class="btn" id="reset">Reset</button>
+        <button class="btn btn-primary" id="save">Save</button>
+        <button class="btn btn-secondary" id="reset">Reset</button>
       </div>
+      <p class="brand-subtitle" style="margin:.4rem 0 0">Disclaimer: educational only; not legal advice.</p>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-        <a href="sitemap.xml">Sitemap</a>
-      </nav>
-    </div>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
   </footer>
 
   <script>
-    // Mobile nav
-    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
-      const btn=e.currentTarget, m=document.getElementById('nav-menu');
-      const open=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded',!open); m.classList.toggle('open');
-    });
-
-    // Checklist persistence
-    const key='eeoc-checklist';
-    const saved=JSON.parse(localStorage.getItem(key)||'{}');
-    document.querySelectorAll('[data-key]').forEach(cb=>{
-      const k=cb.getAttribute('data-key');
-      cb.checked=!!saved[k];
-      cb.addEventListener('change',()=>{
-        saved[k]=cb.checked; localStorage.setItem(key,JSON.stringify(saved));
-      });
-    });
-
-    // Export / Reset
-    document.getElementById('export').addEventListener('click',()=>{
-      const done=Object.entries(saved).filter(([k,v])=>v).map(([k])=>k.replace(/-/g,' '));
-      const txt = 'EEOC Checklist — Completed:\n\n' + (done.length? done.map((d,i)=>`${i+1}. ${d}`).join('\n') : 'No items checked yet.');
-      const blob=new Blob([txt],{type:'text/plain'}); const url=URL.createObjectURL(blob);
-      const a=document.createElement('a'); a.href=url; a.download='eeoc-checklist.txt'; a.click(); URL.revokeObjectURL(url);
-    });
-    document.getElementById('reset').addEventListener('click',()=>{
-      localStorage.removeItem(key); location.reload();
-    });
-
+    const KEY='eeoc-checklist-v1';
+    const boxes=[...document.querySelectorAll('[data-k]')];
+    // load
+    try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');boxes.forEach(b=>b.checked=!!s[b.dataset.k]);}catch{}
+    // save/reset
+    document.getElementById('save').onclick=()=>{
+      const s={}; boxes.forEach(b=>s[b.dataset.k]=b.checked); localStorage.setItem(KEY,JSON.stringify(s));
+      alert('Progress saved on this device.');
+    };
+    document.getElementById('reset').onclick=()=>{ localStorage.removeItem(KEY); boxes.forEach(b=>b.checked=false); };
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
