@@ -3,81 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google site verification -->
-  <meta name="google-site-verification" content="OB0yYQ2UngtnNSDmpFm2zKuhAlveSr4zn1UdgQn-jR5Y">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Understand your rights. EEOC Explained provides plain-language guidance on filing a charge, responding to discrimination, and navigating the EEOC process confidently.">
-  <meta name="keywords" content="EEOC, Equal Employment Opportunity, discrimination, workplace rights, filing a charge, retaliation, mediation, EEOC process, employment law, EEOC investigation, EEOC complaint">
-  <meta name="author" content="EEOC Explained">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="EEOC Explained - Your Guide to the EEOC Process">
-  <meta property="og:description" content="Step-by-step guidance, templates, and insights to help you navigate the EEOC process in plain English.">
-  <meta property="og:url" content="https://eeocexplained.github.io/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EEOC Explained">
-  <meta name="twitter:description" content="Plain-English guidance for filing and understanding EEOC cases.">
-
+  <meta name="color-scheme" content="light dark">
   <title>EEOC Explained</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1 class="brand-title">EEOC Explained</h1>
-        <p class="brand-subtitle">Workplace rights & the EEOC process — in plain English</p>
-      </div>
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="checklist">Checklist</a>
-        <a href="resources">Resources</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h2>Understand your rights. Navigate the EEOC process with confidence.</h2>
-      <p>Clear steps and what to expect — from filing a charge to final determination.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="checklist">Open the Checklist</a>
-        <a class="btn btn-secondary" href="resources">Resources</a>
-      </div>
-    </div>
-  </section>
-
-  <main class="container">
-    <section class="card">
-      <h3>Welcome</h3>
-      <p>This site helps you understand your workplace rights and how to file or respond to an EEOC charge.</p>
-    </section>
-    <div class="grid">
-      <div class="card"><h3>File a Charge</h3><p>When, where, and how to file.</p></div>
-      <div class="card"><h3>Investigation</h3><p>What to expect and how to prepare.</p></div>
-      <div class="card"><h3>Determination</h3><p>Results and next steps.</p></div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-<script>
-  // highlight the current nav link
-  const path = location.pathname.replace(/\/+$/, "");
-  document.querySelectorAll(".site-nav a").forEach(a => {
-    const href = a.getAttribute("href").replace(/\/+$/, "");
-    if (path.endsWith(href)) a.classList.add("active");
-  });
-</script>
+<header>
+  <h1>EEOC Explained</h1>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>Welcome</h2>
+  <p>Understand your rights and navigate the EEOC process in plain English.</p>
+  <a href="checklist.html" class="btn">Open Checklist</a>
+</main>
+<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
