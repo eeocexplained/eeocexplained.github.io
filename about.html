@@ -1,14 +1,20 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EEOC Explained — About</title>
-<link rel="stylesheet" href="/style.css">
-</head><body>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEOC Explained — About</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
 <header>
   <div class="container wrap">
     <div><h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1><p class="sub">Workplace rights & the EEOC process — in plain English</p></div>
     <nav>
-      <a href="/">Home</a><a href="/checklist.html">Checklist</a><a href="/resources.html">Resources</a><a href="/about.html" class="active">About</a><a href="/contact.html">Contact</a>
+      <a href="/">Home</a>
+      <a href="/checklist.html">Checklist</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -16,24 +22,43 @@
 <main class="container">
   <div class="section">
     <h2>About EEOC Explained</h2>
-    <p>Independent educational resource simplifying workplace rights and the EEOC process for employees, HR, and advocates.</p>
+    <p>EEOC Explained was created to make the Equal Employment Opportunity process easier to understand. Our mission is to empower employees and employers with knowledge about rights, responsibilities, and real-world procedures.</p>
   </div>
 
   <div class="card">
-    <h3>What We Do</h3>
+    <h3>Our Focus</h3>
     <ul>
-      <li>Plain-English guides to filing, mediation, investigation, and outcomes.</li>
-      <li>Curated official links and practical tips.</li>
-      <li>Checklists to stay organized.</li>
+      <li>Breaking down the EEOC process into plain English</li>
+      <li>Providing verified official resources</li>
+      <li>Helping users prepare for filings, mediation, and investigations</li>
     </ul>
   </div>
 
   <div class="card">
-    <h3>Important</h3>
-    <p><strong>No legal advice or representation.</strong> Not affiliated with the U.S. EEOC. Verify deadlines and requirements with official sources.</p>
+    <h3>Disclaimer</h3>
+    <p>This site is independent and not affiliated with the U.S. Equal Employment Opportunity Commission. All information is for educational purposes only and does not constitute legal advice.</p>
   </div>
 </main>
 
-<footer>…same as other pages…</footer>
-<script>/* same year + highlight script as home */</script>
-</body></html>
+<footer>
+  <div class="container wrap">
+    <p>© <span id="year"></span> EEOC Explained</p>
+    <div class="footer-nav">
+      <a href="https://facebook.com/EEOCExplained" target="_blank">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank">YouTube</a>
+      <a href="https://instagram.com/eeocexplained" target="_blank">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank">X</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const norm=s=>s.replace(/\/+$/,''); const path=norm(location.pathname||'/');
+  document.querySelectorAll('header nav a').forEach(a=>{
+    const href=norm(a.getAttribute('href'));
+    if((path==='/'&&href==='/')||(href&&href===path)) a.classList.add('active');
+  });
+</script>
+</body>
+</html>
