@@ -60,3 +60,9 @@ p{margin:.5rem 0 1rem}
   .btn-secondary{border-color:#fff;color:#fff;}
   .site-footer{background:var(--dark);color:#dfe6ee;}
 }
+/* ---- Current-page highlight ---- */
+.site-nav a.active {
+  text-decoration: underline;
+  font-weight: 600;
+  opacity: 1;
+}
