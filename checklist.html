@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Explained — Checklist</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
@@ -26,18 +25,23 @@
 <main class="container">
   <div class="section">
     <h2>EEOC Complaint Checklist</h2>
-    <p>Keep track of each stage of your case with this quick overview.</p>
+    <p>Use this to track key steps.</p>
   </div>
 
   <div class="card">
     <ul>
-      <li>Confirm filing deadlines (usually 180–300 days).</li>
-      <li>Gather all supporting documents (emails, texts, witnesses).</li>
-      <li>Submit an intake online or at a field office.</li>
-      <li>Respond promptly to requests for info or mediation offers.</li>
-      <li>Track updates via the <a href="https://publicportal.eeoc.gov/portal/" target="_blank">Public Portal</a>.</li>
-      <li>Review determination & Right-to-Sue notices carefully.</li>
+      <li>Confirm filing deadlines (usually 180–300 days) and employer coverage (most laws: 15+ employees; age: 20+).</li>
+      <li>Gather facts & documents (timeline, emails/texts, witnesses).</li>
+      <li>Start intake online/phone/in person.</li>
+      <li>Review and submit your charge.</li>
+      <li>Watch for mediation, investigation requests, and deadlines.</li>
+      <li>Save everything; note Right-to-Sue timelines if issued.</li>
     </ul>
+    <p>
+      <a class="btn" target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">Start Online (EEOC Portal)</a>
+      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File</a>
+      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/mediation">Mediation Program</a>
+    </p>
   </div>
 </main>
 
@@ -45,21 +49,24 @@
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
     <div class="footer-nav">
-      <a href="https://facebook.com/EEOCExplained" target="_blank">Facebook</a>
-      <a href="https://youtube.com/@EEOCExplained" target="_blank">YouTube</a>
-      <a href="https://instagram.com/eeocexplained" target="_blank">Instagram</a>
-      <a href="https://x.com/EEOCExplained" target="_blank">X</a>
+      <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/eeocexplained" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const norm=s=>s.replace(/\/+$/,''); const path=norm(location.pathname||'/');
-  document.querySelectorAll('header nav a').forEach(a=>{
-    const href=norm(a.getAttribute('href'));
-    if((path==='/'&&href==='/')||(href&&href===path)) a.classList.add('active');
-  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    const norm = s => (s||'').replace(/\/+$/,'');
+    const path = norm(location.pathname || '/');
+    document.querySelectorAll('header nav a').forEach(a=>{
+      const href = norm(a.getAttribute('href'));
+      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
+    });
+  })();
 </script>
 </body>
 </html>
