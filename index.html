@@ -1,9 +1,12 @@
-
-    <!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EEOC Explained — Understand Your Workplace Rights</title>
-<link rel="stylesheet" href="/style.css">
-</head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEOC Explained — Understand Your Workplace Rights</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
 
 <header>
   <div class="container wrap">
@@ -12,7 +15,7 @@
       <p class="sub">Workplace rights & the EEOC process — in plain English</p>
     </div>
     <nav>
-      <a href="/" class="active">Home</a>
+      <a href="/">Home</a>
       <a href="/checklist.html">Checklist</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html">About</a>
@@ -23,27 +26,28 @@
 
 <section class="hero">
   <div class="container">
-    <h2>Understand your rights. Navigate the EEOC process with confidence.</h2>
-    <p class="lead">Clear steps from filing to mediation, investigation, and final determinations.</p>
-    <p><a class="btn" href="/checklist.html">Open the Checklist</a>
-       <a class="btn secondary" href="/resources.html">Browse Resources</a></p>
+    <h2>Understand Your Rights.</h2>
+    <p class="lead">Learn how to file, respond, and move confidently through the EEOC process.</p>
+    <p>
+      <a class="btn" href="/checklist.html">Open the Checklist</a>
+      <a class="btn secondary" href="/resources.html">View Resources</a>
+    </p>
   </div>
 </section>
 
 <main class="container">
   <div class="section">
-    <h3>Start here</h3>
-    <p>We translate complex EEOC procedures into plain-English guides you can use today.</p>
+    <h3>Start Here</h3>
+    <p>This site simplifies every step of the EEOC process — from filing a charge to receiving a determination — using official guidance, practical examples, and clear timelines.</p>
   </div>
 
   <div class="card">
-    <h3>Quick links</h3>
-    <p>
-      <a class="btn" target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal</a>
-      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File</a>
-      <a class="btn secondary" target="_blank" rel="noopener" href="https://www.eeoc.gov/field">Find a Field Office</a>
-    </p>
-    <p class="sub" style="color:#5a6779">Independent educational site; not affiliated with the U.S. EEOC.</p>
+    <h3>Quick Links</h3>
+    <ul class="links">
+      <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (File or Check a Charge)</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/how-file-charge-employment-discrimination">How to File a Charge</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/field">Find a Field Office</a></li>
+    </ul>
   </div>
 </main>
 
@@ -51,18 +55,22 @@
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
     <div class="footer-nav">
-      <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://instagram.com/eeocexplained" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
+      <a href="https://facebook.com/EEOCExplained" target="_blank">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank">YouTube</a>
+      <a href="https://instagram.com/eeocexplained" target="_blank">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank">X</a>
     </div>
   </div>
 </footer>
+
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
   const norm=s=>s.replace(/\/+$/,''); const path=norm(location.pathname||'/');
   document.querySelectorAll('header nav a').forEach(a=>{
-    const href=norm(a.getAttribute('href')); if((path==='/'&&href==='/')||(href&&href===path)){a.classList.add('active');}
+    const href=norm(a.getAttribute('href'));
+    if((path==='/'&&href==='/')||(href&&href===path)) a.classList.add('active');
   });
 </script>
-</body></html>
+
+</body>
+</html>
