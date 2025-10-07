@@ -1,27 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About – EEOC Explained</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — EEOC Explained</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>EEOC Explained</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="checklist.html">Checklist</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="./"><span class="brand-title">EEOC Explained</span><span class="brand-sub">Workplace rights in plain English</span></a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./">Home</a></li><li><a href="checklist.html">Checklist</a></li>
+        <li><a href="resources.html">Resources</a></li><li><a class="active" href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
-<main>
-  <h2>About This Site</h2>
-  <p>EEOC Explained helps individuals understand their workplace rights, file EEOC complaints, and respond effectively — all explained in plain English.</p>
+
+<main id="main" class="container">
+  <section class="section">
+    <h1>About EEOC Explained</h1>
+    <p class="lead">We translate complex EEOC procedures into practical, step-by-step guidance you can use.</p>
+    <p><strong>Note:</strong> This site is educational content and not legal advice. Always confirm deadlines and requirements with official sources.</p>
+  </section>
 </main>
-<footer><p>© <span id="year"></span> EEOC Explained</p></footer>
+
+<footer class="site-footer"><div class="container footer-inner"><p>© <span id="year"></span> EEOC Explained</p></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
