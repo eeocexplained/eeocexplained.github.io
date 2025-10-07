@@ -54,5 +54,13 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+  // highlight the current nav link
+  const path = location.pathname.replace(/\/+$/, "");
+  document.querySelectorAll(".site-nav a").forEach(a => {
+    const href = a.getAttribute("href").replace(/\/+$/, "");
+    if (path.endsWith(href)) a.classList.add("active");
+  });
+</script>
 </body>
 </html>
