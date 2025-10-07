@@ -3,41 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEOC Explained</title>
+  <meta name="description" content="Plain-English guidance on workplace rights, discrimination law, and the EEOC process." />
 
-  <title>EEOC Explained — Workplace Rights, Discrimination Law, and the EEOC Process</title>
-  <meta name="description" content="Plain-English guidance on workplace rights, discrimination law, and the EEOC process. Learn when and how to file, what to expect, and how to prepare." />
-
+  <!-- Canonical -->
   <link rel="canonical" href="https://eeocexplained.github.io/" />
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph -->
   <meta property="og:title" content="EEOC Explained" />
   <meta property="og:description" content="Plain-English guidance on workplace rights, discrimination law, and the EEOC process." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://eeocexplained.github.io/" />
-  <meta property="og:image" content="https://eeocexplained.github.io/logo.png" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- Site Header -->
+  <!-- Header (logo removed) -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="./">
-        <!-- Upload logo.png at repo root -->
-        <img src="logo.png" alt="EEOC Explained logo" class="site-logo" />
         <span class="brand-text">
           <span class="brand-title">EEOC Explained</span>
           <span class="brand-subtitle">Workplace rights &amp; the EEOC process — in plain English</span>
         </span>
       </a>
 
-      <nav class="site-nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
-        <ul id="nav-menu" class="nav-list">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Main">
+        <ul>
           <li><a href="./">Home</a></li>
           <li><a href="checklist">Checklist</a></li>
           <li><a href="resources">Resources</a></li>
@@ -51,73 +50,69 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1 class="hero-title">Understand your rights. Navigate the EEOC process with confidence.</h1>
-      <p class="lead">Clear steps, practical templates, and what to expect — from filing a charge to final determination.</p>
+      <h1>Understand your rights. Navigate the EEOC process with confidence.</h1>
+      <p class="lead">
+        Clear steps, practical templates, and what to expect — from filing a charge to final determination.
+      </p>
 
-      <div class="hero-actions">
-        <a class="btn primary" href="checklist">Open the EEOC Checklist</a>
-        <a class="btn" href="resources">Browse Resources</a>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="checklist">Open the EEOC Checklist</a>
+        <a class="btn btn-secondary" href="resources">Browse Resources</a>
       </div>
     </div>
   </section>
 
-  <!-- Main -->
-  <main id="main" class="container" role="main">
-    <section class="card">
+  <main id="main">
+    <section class="container section-intro card">
       <h2>Welcome to EEOC Explained</h2>
-      <p>This site helps you understand your workplace rights, how to file or respond to an EEOC charge, and what to expect during the investigation process — all in plain, accessible language.</p>
+      <p>
+        This site helps you understand your workplace rights, how to file or respond to an EEOC charge, and what to expect during the investigation process — all in plain, accessible language.
+      </p>
       <p><strong>Coming soon:</strong> short videos, templates, and case insights to help at every step.</p>
     </section>
 
-    <div class="grid">
-      <section class="card">
+    <section class="container grid-3">
+      <article class="card">
         <h3>File an EEOC Charge</h3>
         <p>When, where, and how to file — deadlines, forms, and practical tips.</p>
-        <p><a class="link-arrow" href="resources#filing">Learn more</a></p>
-      </section>
+        <p><a class="link-arrow" href="checklist">Learn more →</a></p>
+      </article>
 
-      <section class="card">
+      <article class="card">
         <h3>Mediation &amp; Investigation</h3>
         <p>What to expect, how to prepare, and how each step affects your case.</p>
-        <p><a class="link-arrow" href="resources#investigation">Learn more</a></p>
-      </section>
+        <p><a class="link-arrow" href="resources">Learn more →</a></p>
+      </article>
 
-      <section class="card">
+      <article class="card">
         <h3>Final Determination</h3>
         <p>Results, Notice of Right to Sue, and options if you disagree.</p>
-        <p><a class="link-arrow" href="resources#final">Learn more</a></p>
-      </section>
-    </div>
+        <p><a class="link-arrow" href="resources">Learn more →</a></p>
+      </article>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> EEOC Explained — All rights reserved.</p>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-        <a href="sitemap.xml">Sitemap</a>
-      </nav>
+      <p id="copyright">© <span id="year"></span> EEOC Explained — All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Mobile nav toggle (no dependencies)
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('nav-menu');
-    if (toggle && menu) {
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
       toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        menu.classList.toggle('open');
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
       });
     }
-    // Current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-<link rel="stylesheet" href="style.css?v=2">
    
