@@ -20,7 +20,7 @@
 <main>
   <h2>Contact</h2>
   <p>For general feedback, reach out using the form below.</p>
-  <form action="mailto:eeocexplained@example.com" method="post" enctype="text/plain">
+  <form action="mailto:eeocexplained@gmail.com" method="post" enctype="text/plain">
     <p><input type="text" name="Name" placeholder="Your Name" required></p>
     <p><input type="email" name="Email" placeholder="Your Email" required></p>
     <p><textarea name="Message" rows="5" placeholder="Your Message" required></textarea></p>
