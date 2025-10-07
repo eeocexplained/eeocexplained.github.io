@@ -8,7 +8,10 @@
 <body>
 <header>
   <div class="container wrap">
-    <div><h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1><p class="sub">Workplace rights & the EEOC process — in plain English</p></div>
+    <div>
+      <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
+      <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+    </div>
     <nav>
       <a href="/">Home</a>
       <a href="/checklist.html">Checklist</a>
@@ -22,16 +25,17 @@
 <main class="container">
   <div class="section">
     <h2>Contact</h2>
-    <p>Questions or suggestions? We welcome feedback. Use the links below or email us directly.</p>
+    <p>Questions or suggestions? Email us. For filings or case status, use the official EEOC portals below.</p>
     <p><a class="btn" href="mailto:eeocexplained@gmail.com?subject=Question%20for%20EEOC%20Explained">Email EEOC Explained</a></p>
   </div>
 
   <div class="card">
-    <h3>Official EEOC Sites</h3>
+    <h3>Official EEOC</h3>
     <ul class="links">
-      <li><a href="https://publicportal.eeoc.gov/portal/" target="_blank">EEOC Public Portal</a></li>
-      <li><a href="https://www.eeoc.gov/" target="_blank">EEOC.gov (Official Website)</a></li>
+      <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (file/check a charge)</a></li>
+      <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/">EEOC.gov (laws & offices)</a></li>
     </ul>
+    <p class="lead">Do not include sensitive personal information in email.</p>
   </div>
 </main>
 
@@ -39,21 +43,24 @@
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
     <div class="footer-nav">
-      <a href="https://facebook.com/EEOCExplained" target="_blank">Facebook</a>
-      <a href="https://youtube.com/@EEOCExplained" target="_blank">YouTube</a>
-      <a href="https://instagram.com/eeocexplained" target="_blank">Instagram</a>
-      <a href="https://x.com/EEOCExplained" target="_blank">X</a>
+      <a href="https://facebook.com/EEOCExplained" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://youtube.com/@EEOCExplained" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/eeocexplained" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/EEOCExplained" target="_blank" rel="noopener">X</a>
     </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const norm=s=>s.replace(/\/+$/,''); const path=norm(location.pathname||'/');
-  document.querySelectorAll('header nav a').forEach(a=>{
-    const href=norm(a.getAttribute('href'));
-    if((path==='/'&&href==='/')||(href&&href===path)) a.classList.add('active');
-  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    const norm = s => (s||'').replace(/\/+$/,'');
+    const path = norm(location.pathname || '/');
+    document.querySelectorAll('header nav a').forEach(a=>{
+      const href = norm(a.getAttribute('href'));
+      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
+    });
+  })();
 </script>
 </body>
 </html>
