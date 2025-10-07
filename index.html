@@ -5,47 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Explained — Understand Your Workplace Rights</title>
   <meta name="description" content="Plain-English guides to the EEOC process — filing, mediation, investigation, and determinations — with official links." />
-  <!-- UPDATE: point to the new EEOC.gov style -->
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
-<!-- UPDATE: Standardized header/nav (EEOC.gov style) -->
+<!-- Compact gov-style header with mobile Menu -->
 <header>
-  <div class="container wrap">
-    <div>
-      <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
-      <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+  <div class="container">
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <div class="wrap">
+      <div class="brand">
+        <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
+        <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+      </div>
+      <nav id="site-nav" class="nav">
+        <a href="/">Home</a>
+        <a href="/checklist.html">Checklist</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
     </div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/checklist.html">Checklist</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
   </div>
 </header>
 
-<!-- UPDATE: Hero section with strong headline + actions -->
+<!-- Gradient hero with pill buttons -->
 <section class="hero">
   <div class="container">
-    <h2>Understand Your Rights. Navigate the EEOC Process with Confidence.</h2>
-    <p class="lead">Clear steps from filing and mediation to investigation and determinations — all explained in plain English.</p>
+    <h2>Understand your rights. Navigate the EEOC process with confidence.</h2>
+    <p class="lead">Clear steps, practical templates, and what to expect — from filing a charge to final determination.</p>
     <p>
-      <a class="btn" href="/checklist.html">Open the Checklist</a>
-      <a class="btn secondary" href="/resources.html">View Resources</a>
+      <a class="btn primary" href="/checklist.html">Open the EEOC Checklist</a>
+    </p>
+    <p>
+      <a class="btn outline" href="/resources.html">Browse Resources</a>
     </p>
   </div>
 </section>
 
 <main class="container">
-  <div class="section">
-    <h3>Start Here</h3>
-    <p>We translate complex EEOC procedures into easy, practical guidance so you can act with confidence — whether you’re filing a charge, responding as an employer, or learning your rights.</p>
-  </div>
+  <section class="card">
+    <h3>Welcome to EEOC Explained</h3>
+    <p>This site helps you understand your workplace rights, how to file or respond to an EEOC charge, and what to expect during the investigation process — all in plain, accessible language.</p>
+    <p><strong>Coming soon:</strong> short videos, templates, and case insights to help at every step.</p>
+  </section>
 
-  <div class="card">
+  <section class="card">
     <h3>Quick Links</h3>
     <ul class="links">
       <li><a target="_blank" rel="noopener" href="https://publicportal.eeoc.gov/portal/">EEOC Public Portal (File or Check a Charge)</a></li>
@@ -54,11 +59,10 @@
       <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/retaliation">Understanding Retaliation</a></li>
       <li><a target="_blank" rel="noopener" href="https://www.eeoc.gov/mediation">EEOC Mediation Program</a></li>
     </ul>
-    <p class="lead" style="margin-top:10px;color:#667684">Independent educational resource — not affiliated with the U.S. EEOC.</p>
-  </div>
+    <p style="margin-top:12px;color:#6c7a87">Independent educational resource — not affiliated with the U.S. EEOC.</p>
+  </section>
 </main>
 
-<!-- UPDATE: Standardized footer across all pages -->
 <footer>
   <div class="container wrap">
     <p>© <span id="year"></span> EEOC Explained</p>
@@ -72,14 +76,27 @@
 </footer>
 
 <script>
-  /* UPDATE: auto-year + highlight current tab */
+  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Highlight current tab
   (function(){
     const norm = s => (s||'').replace(/\/+$/,'');
     const path = norm(location.pathname || '/');
-    document.querySelectorAll('header nav a').forEach(a=>{
+    document.querySelectorAll('header .nav a').forEach(a=>{
       const href = norm(a.getAttribute('href'));
-      if ((path==='/' && href==='/') || (href && href===path)) a.classList.add('active');
+      if ((path==='/' && href==='/') || href===path) a.classList.add('active');
+    });
+  })();
+
+  // Mobile menu toggle
+  (function(){
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.getElementById('site-nav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', ()=>{
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   })();
 </script>
