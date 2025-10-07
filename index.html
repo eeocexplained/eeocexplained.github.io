@@ -5,18 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EEOC Explained — Understand Your Workplace Rights</title>
   <meta name="description" content="Plain-English guides to the EEOC process — filing, mediation, investigation, and determinations — with official links." />
-  <link rel="stylesheet" href="/style.css" />
+
+  <!-- 1) Critical CSS inline (so the page renders styled even if cache/path issues) -->
+  <style>
+  :root{--navy:#0b3d62;--navy-900:#083251;--blue:#1b6ca8;--blue-700:#0e66a0;--ink:#0f1220;--muted:#6e7b88;--bg:#fff;--line:#e6edf4;--radius:18px;--shadow:0 12px 28px rgba(15,18,32,.08)}
+  *{box-sizing:border-box}html,body{margin:0}
+  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans";color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:#1b6ca8;text-decoration:underline}a:hover{color:#0e66a0}img{max-width:100%;display:block;height:auto}
+  .container{max-width:1100px;margin:auto;padding:0 20px}.wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  header{background:linear-gradient(180deg,var(--navy),var(--navy-900));color:#fff;padding:14px 0;position:relative}
+  .brand h1{margin:0;font-size:24px;letter-spacing:.2px}.brand .sub{margin:6px 0 0;color:#d7e6f3;font-size:14px}
+  .nav{display:flex;gap:18px;flex-wrap:wrap}
+  .nav a{color:#e9f4fc;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px}
+  .nav a:hover{background:rgba(255,255,255,.12)}.nav a.active{background:#fff;color:var(--navy)}
+  .menu-btn{display:none;background:#1664a0;color:#fff;border:none;padding:8px 14px;border-radius:999px;font-weight:700}
+  .menu-btn:hover{background:#0f5a93}
+  .hero{background:linear-gradient(180deg,#0f62a7 0%, #0d5a97 60%, #0b5088 100%);color:#fff;padding:40px 0 36px}
+  .hero h2{font-size:34px;line-height:1.22;margin:0 0 12px}.hero .lead{font-size:18px;color:#e8f2fb;margin:0 0 20px}
+  .btn{display:inline-block;border:none;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:999px}
+  .btn.primary{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.25)}
+  .btn.primary:hover{background:rgba(255,255,255,.18)}
+  .btn.outline{background:#fff;color:#0f62a7;border:2px solid #fff}.btn.outline:hover{filter:brightness(.98)}
+  .section{padding:26px 0 8px}.section h3{margin:0 0 10px;font-size:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin:18px 0;box-shadow:var(--shadow)}
+  .card h3{margin-top:0}.links{margin:0;padding-left:18px}.links li{margin:8px 0}
+  footer{margin-top:36px;padding:22px 0;border-top:1px solid var(--line);background:#fbfdff}
+  footer p{margin:0;color:var(--muted)}.footer-nav{display:flex;gap:14px;flex-wrap:wrap}
+  .footer-nav a{text-decoration:none}.footer-nav a:hover{text-decoration:underline}
+  @media (max-width:820px){
+    .wrap{flex-direction:column;align-items:flex-start;gap:12px}
+    .menu-btn{display:inline-block;position:absolute;right:16px;top:12px}
+    .nav{display:none;width:100%;gap:10px}
+    .nav.open{display:flex}
+    .nav a{padding:10px 12px}
+    .hero h2{font-size:28px}
+  }
+  </style>
+
+  <!-- 2) External stylesheet (absolute URL + cache-buster). 
+       Once this is live, you can remove the inline <style> above if you prefer. -->
+  <link rel="stylesheet" href="https://eeocexplained.github.io/style.css?v=3" />
 </head>
 <body>
 
-<!-- Compact gov-style header with mobile Menu -->
 <header>
   <div class="container">
     <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <div class="wrap">
       <div class="brand">
         <h1><a href="/" style="color:#fff;text-decoration:none">EEOC Explained</a></h1>
-        <p class="sub">Workplace rights & the EEOC process — in plain English</p>
+        <p class="sub">Workplace rights &amp; the EEOC process — in plain English</p>
       </div>
       <nav id="site-nav" class="nav">
         <a href="/">Home</a>
@@ -29,17 +67,12 @@
   </div>
 </header>
 
-<!-- Gradient hero with pill buttons -->
 <section class="hero">
   <div class="container">
     <h2>Understand your rights. Navigate the EEOC process with confidence.</h2>
     <p class="lead">Clear steps, practical templates, and what to expect — from filing a charge to final determination.</p>
-    <p>
-      <a class="btn primary" href="/checklist.html">Open the EEOC Checklist</a>
-    </p>
-    <p>
-      <a class="btn outline" href="/resources.html">Browse Resources</a>
-    </p>
+    <p><a class="btn primary" href="/checklist.html">Open the EEOC Checklist</a></p>
+    <p><a class="btn outline" href="/resources.html">Browse Resources</a></p>
   </div>
 </section>
 
